@@ -1,0 +1,2784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Best SEO Expert in Bangladesh | Mahfuz BD Asia - AI-Driven SEO Specialist</title>
+    <meta name="description" content="Looking for the best SEO expert in Bangladesh? Mahfuz BD Asia offers AI-driven SEO, local SEO dominance, and high-ROI ecommerce SEO strategies with 7+ years of experience."/>
+    <!-- Fonts and Material Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <!-- Central Stylesheet -->
+    <link rel="stylesheet" href="style.css"/>
+    <style>
+        /* ── Gutter & card padding fallback (in case style.css --gutter not applied) ── */
+        :root {
+            --gutter: 24px;
+        }
+        .card-inner {
+            padding: var(--gutter, 24px) !important;
+        }
+        .p-6 {
+            padding: 24px !important;
+        }
+        .p-8 {
+            padding: 32px !important;
+        }
+        /* Portfolio horizontal scroll card text won't touch borders */
+        .portfolio-card.card-inner {
+            padding: 24px !important;
+        }
+        /* ─────────────────────────────────────────────────────── */
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            align-items: center;
+            gap: 48px;
+        }
+        .hero-text { grid-column: span 7; }
+        .hero-img-col { grid-column: span 5; position: relative; }
+        
+        @media (max-width: 1024px) {
+            .hero-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 40px;
+            }
+            .hero-text, .hero-img-col { width: 100%; }
+        }
+
+        .hero-img-col::before {
+            content: '';
+            position: absolute;
+            inset: -20px;
+            background: radial-gradient(ellipse at center, rgba(255, 0, 38, 0.45) 0%, transparent 65%);
+            border-radius: 50%;
+            filter: blur(60px);
+            z-index: 0;
+            pointer-events: none;
+        }
+        .hero-img-frame {
+            border: 2px solid rgba(255, 81, 106, 0.15);
+            border-radius: var(--radius-xl);
+            padding: 2px;
+            background: rgba(26, 26, 26, 0.4);
+            backdrop-filter: blur(8px);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 0 60px rgba(255, 0, 38, 0.25), 0 0 120px rgba(255, 0, 38, 0.15);
+        }
+        .hero-img-frame:hover {
+            border-color: rgb(255, 0, 38);
+            box-shadow: 0 0 80px rgba(255, 0, 38, 0.5), 0 0 160px rgba(255, 0, 38, 0.25);
+        }
+
+        .avatar-img {
+            border-radius: var(--radius-lg);
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: grayscale(1);
+            transition: filter 0.5s ease;
+        }
+        .hero-img-frame:hover .avatar-img {
+            filter: grayscale(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-mesh"></div>
+
+    <!-- Navigation Header -->
+    <header class="glass-header">
+        <div class="container nav-container">
+            <div class="text-headline-lg" style="font-size: 24px; font-weight: 700; letter-spacing: 0.05em;">
+                MAHFUZ<span class="text-primary">.</span>
+            </div>
+            <nav class="nav-links">
+                <a class="text-label-caps" href="#hero">Home</a>
+                <a class="text-label-caps" href="#services">Features</a>
+                <a class="text-label-caps" href="#skills">Skills</a>
+                <a class="text-label-caps" href="#case-studies">Projects</a>
+                <a class="text-label-caps" href="#resume">Resume</a>
+                <a class="text-label-caps" href="#pricing">Pricing</a>
+                <a class="text-label-caps" href="#contact">Contact</a>
+            </nav>
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <a href="login.html" class="btn btn-outline" style="padding: 10px 20px;">Portal Access</a>
+                <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="section" id="hero" style="padding-top: 160px; border-bottom: 1px solid var(--color-outline); position: relative; overflow: hidden;">
+            <canvas id="heroParticles" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0.55;"></canvas>
+            <div class="container" style="position:relative;z-index:1;">
+                <div class="hero-grid">
+                    <div class="hero-text">
+                        <span class="text-label-caps text-muted" style="margin-bottom: 16px; display: block;">Welcome to my world</span>
+                        <h1 class="text-display-xl" style="margin-bottom: 24px;">
+                            Hi, I'm <br/>
+                            <canvas id="particleText" style="display:block; max-width:100%; height:80px;"></canvas>
+                            <span id="dynamic-title" style="color: var(--color-secondary);"></span><span id="cursor-blink" style="color: var(--color-primary);">|</span>
+                        </h1>
+                        <script>
+                            (function() {
+
+                                /* ============================================
+                                   ✏️  নতুন TEXT যোগ করতে শুধু নিচে লিখুন:
+                                   "আপনার টেক্সট এখানে.",
+                                   বাকি কিছু ছুঁতে হবে না!
+                                   ============================================ */
+                                const titles = [
+                                    "Best SEO Expert.",
+                                    "Best SMM Expert.",
+                                    "Local SEO Expert.",
+                                    // 👇 নতুন title এখানে যোগ করুন
+                                ];
+
+                                /* ============================================
+                                   ⏱️  SPEED CONTROL — শুধু সংখ্যা বদলান (ms)
+                                   বড় সংখ্যা = ধীরে, ছোট সংখ্যা = দ্রুত
+                                   ============================================ */
+                                const config = {
+                                    typeSpeed:   160,   // টাইপ হওয়ার গতি (ms)
+                                    deleteSpeed: 100,   // মুছে যাওয়ার গতি (ms)
+                                    pauseAfterType: 1800, // লেখা শেষে কতক্ষণ থাকবে (ms)
+                                    cursorBlink: 500,  // cursor blink গতি (ms)
+                                };
+                                /* ============================================ */
+
+                                let titleIndex = 0;
+                                let charIndex = 0;
+                                let isDeleting = false;
+                                const el = document.getElementById('dynamic-title');
+                                const cursor = document.getElementById('cursor-blink');
+
+                                setInterval(() => {
+                                    cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
+                                }, config.cursorBlink);
+
+                                function type() {
+                                    const current = titles[titleIndex];
+                                    if (!isDeleting) {
+                                        el.textContent = current.substring(0, charIndex + 1);
+                                        charIndex++;
+                                        if (charIndex === current.length) {
+                                            isDeleting = true;
+                                            setTimeout(type, config.pauseAfterType);
+                                            return;
+                                        }
+                                        setTimeout(type, config.typeSpeed);
+                                    } else {
+                                        el.textContent = current.substring(0, charIndex - 1);
+                                        charIndex--;
+                                        if (charIndex === 0) {
+                                            isDeleting = false;
+                                            titleIndex = (titleIndex + 1) % titles.length;
+                                        }
+                                        setTimeout(type, config.deleteSpeed);
+                                    }
+                                }
+                                type();
+                            })();
+                        </script>
+                        <p class="text-body-lg" style="margin-bottom: 40px; max-w-xl;">
+                            As the <span class="text-secondary" style="font-weight: 500;">Best SEO Expert in Bangladesh</span>, I empower brands with semantic search dominance and AI-driven digital marketing strategies that survive algorithm updates.
+                        </p>
+                        
+                        <div>
+                            <span class="text-label-caps text-muted" style="display: block; margin-bottom: 16px;">Find me on</span>
+                            <div class="flex" style="gap: 16px;">
+                                <a class="card-inner flex items-center justify-center" style="width: 56px; height: 56px; text-decoration: none;" href="#" aria-label="Facebook">
+                                    <span class="material-symbols-outlined text-secondary">public</span>
+                                </a>
+                                <a class="card-inner flex items-center justify-center" style="width: 56px; height: 56px; text-decoration: none;" href="#" aria-label="LinkedIn">
+                                    <span class="material-symbols-outlined text-secondary">share</span>
+                                </a>
+                                <a class="card-inner flex items-center justify-center" style="width: 56px; height: 56px; text-decoration: none;" href="#" aria-label="Mail">
+                                    <span class="material-symbols-outlined text-secondary">alternate_email</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-img-col">
+                        <div class="hero-img-frame">
+                            <img class="avatar-img" src="file:///D:/mahfuz%20bd%20asia%20port%20follio/port%20follio%20website%20mahfuz%20%20bd%20asia/image/mahfuz%20bd%20asia.png" alt="Mahfuz BD Asia | SEO Expert"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section style="padding: 60px 0; border-bottom: 1px solid var(--color-outline); background: rgba#131313;">
+            <div class="container">
+                <div class="grid grid-cols-4 md-grid-cols-2">
+                    <div class="card-inner p-8 text-center">
+                        <h3 class="text-headline-lg text-primary" style="margin-bottom: 8px;">7+</h3>
+                        <p class="text-label-caps text-muted">Years Exp</p>
+                    </div>
+                    <div class="card-inner p-8 text-center">
+                        <h3 class="text-headline-lg text-primary" style="margin-bottom: 8px;">500+</h3>
+                        <p class="text-label-caps text-muted">SEO Projects</p>
+                    </div>
+                    <div class="card-inner p-8 text-center">
+                        <h3 class="text-headline-lg text-primary" style="margin-bottom: 8px;">5+</h3>
+                        <p class="text-label-caps text-muted">Countries served</p>
+                    </div>
+                    <div class="card-inner p-8 text-center">
+                        <h3 class="text-headline-lg text-primary" style="margin-bottom: 8px;">100%</h3>
+                        <p class="text-label-caps text-muted">Success Rate</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="section" id="services" style="border-bottom: 1px solid var(--color-outline); position:relative; overflow:hidden;">
+            <div class="container">
+                <div style="margin-bottom: 60px;">
+                    <span class="text-label-caps text-primary">Capabilities</span>
+                    <h2 class="text-headline-lg" style="margin-top: 8px;">What I Do</h2>
+                </div>
+
+                <div class="grid grid-cols-2 lg-grid-cols-1" id="serviceGrid">
+                    <!-- Service 1 -->
+                    <div class="glass-card p-8 flex flex-col justify-between" style="min-height: 280px;">
+                        <div>
+                            <span class="material-symbols-outlined text-primary" style="font-size: 48px; margin-bottom: 24px;">code</span>
+                            <h3 class="text-headline-lg" style="font-size: 24px; margin-bottom: 16px;">Website Development</h3>
+                            <p class="text-muted">Custom responsive websites crafted for local and international clients ensuring speed, security, and seamless user experiences.</p>
+                        </div>
+                    </div>
+                    <!-- Service 2 -->
+                    <div class="glass-card p-8 flex flex-col justify-between" style="min-height: 280px;">
+                        <div>
+                            <span class="material-symbols-outlined text-primary" style="font-size: 48px; margin-bottom: 24px;">brush</span>
+                            <h3 class="text-headline-lg" style="font-size: 24px; margin-bottom: 16px;">UI/UX Design</h3>
+                            <p class="text-muted">Strategic interface design focused on user behavior, visual hierarchy, conversion optimization, and engaging digital experiences.</p>
+                        </div>
+                    </div>
+                    <!-- Service 3 -->
+                    <div class="glass-card p-8 flex flex-col justify-between" style="min-height: 280px;">
+                        <div>
+                            <span class="material-symbols-outlined text-primary" style="font-size: 48px; margin-bottom: 24px;">travel_explore</span>
+                            <h3 class="text-headline-lg" style="font-size: 24px; margin-bottom: 16px;">SEO Optimization</h3>
+                            <p class="text-muted">Comprehensive technical debt liquidation including crawlability analyses, index status reviews, and Core Web Vitals optimization.</p>
+                        </div>
+                    </div>
+                    <!-- Service 4 -->
+                    <div class="glass-card p-8 flex flex-col justify-between" style="min-height: 280px;">
+                        <div>
+                            <span class="material-symbols-outlined text-primary" style="font-size: 48px; margin-bottom: 24px;">share</span>
+                            <h3 class="text-headline-lg" style="font-size: 24px; margin-bottom: 16px;">Social Media Management</h3>
+                            <p class="text-muted">Data-driven social media strategies covering organic growth, paid campaigns, audience targeting, and consistent brand engagement.</p>
+                        </div>
+                    </div>
+                    <!-- Service 5 -->
+                    <div class="glass-card p-8 flex flex-col justify-between" style="min-height: 280px;">
+                        <div>
+                            <span class="material-symbols-outlined text-primary" style="font-size: 48px; margin-bottom: 24px;">shopping_cart</span>
+                            <h3 class="text-headline-lg" style="font-size: 24px; margin-bottom: 16px;">E-commerce Solution</h3>
+                            <p class="text-muted">End-to-end online store development including product setup, payment integration, inventory management, and conversion boosting.</p>
+                        </div>
+                    </div>
+                    <!-- Service 6 -->
+                    <div class="glass-card p-8 flex flex-col justify-between" style="min-height: 280px;">
+                        <div>
+                            <span class="material-symbols-outlined text-primary" style="font-size: 48px; margin-bottom: 24px;">lightbulb</span>
+                            <h3 class="text-headline-lg" style="font-size: 24px; margin-bottom: 16px;">Brand Strategy & Consulting</h3>
+                            <p class="text-muted">Holistic brand positioning through market research, competitor analysis, identity creation, and long-term digital growth planning.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Walking Cat Strip -->
+            <div style="margin-top: 48px; position: relative; height: 80px; width: 100vw; overflow: hidden;">
+                <canvas id="walkingCatStrip" style="position:absolute;top:0;left:0;width:100vw;height:80px;"></canvas>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="section" id="skills" style="border-bottom: 1px solid var(--color-outline); background: rgba(14, 14, 14, 0.4);">
+            <div class="container">
+                <div class="grid grid-cols-2 lg-grid-cols-1" style="align-items: center; gap: 60px;">
+                    <div>
+                        <span class="text-label-caps text-primary">Performance Focus</span>
+                        <h2 class="text-headline-lg" style="margin: 8px 0 32px 0;">Expertise That Drives Growth</h2>
+                        
+                        <div class="progress-container">
+                            <div class="progress-bar-label">
+                                <span>SEO Optimization</span>
+                                <span>100%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="progress-container">
+                            <div class="progress-bar-label">
+                                <span>Website Development</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 90%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="progress-container">
+                            <div class="progress-bar-label">
+                                <span>UI/UX Design</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="progress-container">
+                            <div class="progress-bar-label">
+                                <span>Social Media Management</span>
+                                <span>92%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 92%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="progress-container">
+                            <div class="progress-bar-label">
+                                <span>E-commerce Solution</span>
+                                <span>88%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 88%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="progress-container">
+                            <div class="progress-bar-label">
+                                <span>Brand Strategy & Consulting</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2" style="column-gap: 24px; row-gap: 48px;">
+                        <div class="card-inner p-8 text-center" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 180px;margin-top: 0px;">
+                            <span class="material-symbols-outlined text-primary" style="font-size: 40px; margin-bottom: 12px;">verified</span>
+                            <h4 class="text-secondary" style="font-weight: 600;">Certified Expert</h4>
+                        </div>
+                        <div class="card-inner p-8 text-center" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 180px; margin-top: 24px;margin-bottom: -24px">
+                            <span class="material-symbols-outlined text-primary" style="font-size: 40px; margin-bottom: 12px;">rocket_launch</span>
+                            <h4 class="text-secondary" style="font-weight: 600;">Scalable Systems</h4>
+                        </div>
+                        <div class="card-inner p-8 text-center" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 180px; margin-top: -24px;">
+                            <span class="material-symbols-outlined text-primary" style="font-size: 40px; margin-bottom: 12px;">group</span>
+                            <h4 class="text-secondary" style="font-weight: 600;">Client Success</h4>
+                        </div>
+                        <div class="card-inner p-8 text-center" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 180px;margin-bottom: -24px"">
+                            <span class="material-symbols-outlined text-primary" style="font-size: 40px; margin-bottom: 12px;">bolt</span>
+                            <h4 class="text-secondary" style="font-weight: 600;">Fast Execution</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Case Studies (Horizontal Scroll) -->
+        <section class="section" id="case-studies" style="border-bottom: 1px solid var(--color-outline);">
+            <div class="container">
+                <div style="margin-bottom: 40px; display:flex; justify-content:space-between; align-items:flex-end;">
+                    <div>
+                        <span class="text-label-caps text-primary">Proven Results</span>
+                        <h2 class="text-headline-lg" style="margin-top: 8px;">Featured Case Studies</h2>
+                    </div>
+                    <div style="display:flex; gap:12px;">
+                        <button id="btnCaseLeft" style="width:44px;height:44px;border-radius:50%;border:1px solid var(--color-outline);background:rgba(255,255,255,0.05);color:var(--color-secondary);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.3s ease;" onmouseover="this.style.borderColor='var(--color-primary)';this.style.color='var(--color-primary)'" onmouseout="this.style.borderColor='var(--color-outline)';this.style.color='var(--color-secondary)'">
+                            <span class="material-symbols-outlined">arrow_back</span>
+                        </button>
+                        <button id="btnCaseRight" style="width:44px;height:44px;border-radius:50%;border:1px solid var(--color-outline);background:rgba(255,255,255,0.05);color:var(--color-secondary);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.3s ease;" onmouseover="this.style.borderColor='var(--color-primary)';this.style.color='var(--color-primary)'" onmouseout="this.style.borderColor='var(--color-outline)';this.style.color='var(--color-secondary)'">
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div style="padding-top: 12px;">
+                <div class="scroll-x" id="caseScrollTrack" style="padding: 8px 4px 20px 4px;">
+                    <!-- Case 1 -->
+                    <div class="scroll-x-card glass-card p-6" style="width: 380px;">
+                        <div class="overflow-hidden rounded-xl aspect-video" style="margin-bottom: 20px; background: linear-gradient(135deg, #121416 0%, #181a1d 50%, #1e2024 100%); display:flex; align-items:center; justify-content:center; position:relative;">
+                            <div style="text-align:center;">
+                                <div style="font-size:48px; font-weight:800; color:#ff0026; line-height:1;">+1,257%</div>
+                                <div style="font-size:13px; color:rgba(255,255,255,0.6); margin-top:6px; letter-spacing:0.1em;">ORGANIC TRAFFIC GROWTH</div>
+                                <div style="margin-top:12px; display:flex; gap:8px; justify-content:center;">
+                                    <div style="background:rgba(255,0,38,0.15); border:1px solid rgba(255,0,38,0.3); border-radius:4px; padding:4px 10px; font-size:11px; color:#ff6680;">Before: 820/mo</div>
+                                    <div style="background:rgba(255,0,38,0.3); border:1px solid rgba(255,0,38,0.6); border-radius:4px; padding:4px 10px; font-size:11px; color:#fff;">After: 11.1K/mo</div>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="text-primary text-label-caps" style="font-size: 11px;">Ecommerce SEO · Bangladesh</span>
+                        <h4 class="text-secondary text-headline-lg" style="font-size: 20px; margin: 8px 0 12px 0;">Pharmacy Platform Organic</h4>
+                        <p class="text-muted" style="font-size: 14px; margin-bottom: 24px;">Full-site SEO restructure with topical clustering and schema markup — took a struggling pharmacy from page 5 to top 3 positions in 4 months.</p>
+                        <div style="display:flex; gap:8px; margin-bottom:20px; flex-wrap:wrap;">
+                            <span style="background:rgba(255,0,38,0.1); border:1px solid rgba(255,0,38,0.2); border-radius:20px; padding:3px 10px; font-size:11px; color:var(--color-primary);">Technical SEO</span>
+                            <span style="background:rgba(255,0,38,0.1); border:1px solid rgba(255,0,38,0.2); border-radius:20px; padding:3px 10px; font-size:11px; color:var(--color-primary);">Schema Markup</span>
+                            <span style="background:rgba(255,0,38,0.1); border:1px solid rgba(255,0,38,0.2); border-radius:20px; padding:3px 10px; font-size:11px; color:var(--color-primary);">4 Months</span>
+                        </div>
+                        <a href="#contact" class="btn btn-outline w-full" style="font-size: 12px; padding: 10px 16px;">View Full Case</a>
+                    </div>
+
+                    <!-- Case 2 -->
+                    <div class="scroll-x-card glass-card p-6" style="width: 380px;">
+                        <div class="overflow-hidden rounded-xl aspect-video" style="margin-bottom: 20px; background: linear-gradient(135deg, #121416 0%, #181a1d 50%, #1e2024 100%); display:flex; align-items:center; justify-content:center;">
+                            <div style="text-align:center;">
+                                <div style="font-size:48px; font-weight:800; color:#ff0026; line-height:1;">420%</div>
+                                <div style="font-size:13px; color:rgba(255,255,255,0.6); margin-top:6px; letter-spacing:0.1em;">MARKETING ROI INCREASE</div>
+                                <div style="margin-top:12px; display:flex; gap:8px; justify-content:center;">
+                                    <div style="background:rgba(255,0,38,0.15); border:1px solid rgba(255,0,38,0.3); border-radius:4px; padding:4px 10px; font-size:11px; color:#ff6680;">CPL: $48 → $11</div>
+                                    <div style="background:rgba(255,0,38,0.3); border:1px solid rgba(255,0,38,0.6); border-radius:4px; padding:4px 10px; font-size:11px; color:#fff;">68 Leads/mo</div>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="text-primary text-label-caps" style="font-size: 11px;">Local SEO · Legal Sector</span>
+                        <h4 class="text-secondary text-headline-lg" style="font-size: 20px; margin: 8px 0 12px 0;">Law Firm Local Domination</h4>
+                        <p class="text-muted" style="font-size: 14px; margin-bottom: 24px;">Google Business Profile overhaul, local citation building, and geo-targeted landing pages drove a 68-lead/month pipeline for a Dhaka law firm.</p>
+                        <div style="display:flex; gap:8px; margin-bottom:20px; flex-wrap:wrap;">
+                            <span style="background:rgba(255,0,38,0.1); border:1px solid rgba(255,0,38,0.2); border-radius:20px; padding:3px 10px; font-size:11px; color:var(--color-primary);">Local SEO</span>
+                            <span style="background:rgba(255,0,38,0.1); border:1px solid rgba(255,0,38,0.2); border-radius:20px; padding:3px 10px; font-size:11px; color:var(--color-primary);">GBP Optimization</span>
+                            <span style="background:rgba(255,0,38,0.1); border:1px solid rgba(255,0,38,0.2); border-radius:20px; padding:3px 10px; font-size:11px; color:var(--color-primary);">3 Months</span>
+                        </div>
+                        <a href="#contact" class="btn btn-outline w-full" style="font-size: 12px; padding: 10px 16px;">View Full Case</a>
+                    </div>
+
+                    <!-- Case 3 -->
+                    <div class="scroll-x-card glass-card p-6" style="width: 380px;">
+                        <div class="overflow-hidden rounded-xl aspect-video" style="margin-bottom: 20px; background: linear-gradient(135deg, #121416 0%, #181a1d 50%, #1e2024 100%); display:flex; align-items:center; justify-content:center;">
+                            <div style="text-align:center;">
+                                <div style="font-size:48px; font-weight:800; color:#ff0026; line-height:1;">$2.4M</div>
+                                <div style="font-size:13px; color:rgba(255,255,255,0.6); margin-top:6px; letter-spacing:0.1em;">REVENUE GENERATED</div>
+                                <div style="margin-top:12px; display:flex; gap:8px; justify-content:center;">
+                                    <div style="background:rgba(255,0,38,0.15); border:1px solid rgba(255,0,38,0.3); border-radius:4px; padding:4px 10px; font-size:11px; color:#ff6680;">ROAS: 8.3x</div>
+                                    <div style="background:rgba(255,0,38,0.3); border:1px solid rgba(255,0,38,0.6); border-radius:4px; padding:4px 10px; font-size:11px; color:#fff;">12 Countries</div>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="text-primary text-label-caps" style="font-size: 11px;">International SEO · Fashion Retail</span>
+                        <h4 class="text-secondary text-headline-lg" style="font-size: 20px; margin: 8px 0 12px 0;">Ecommerce Expansion</h4>
+                        <p class="text-muted" style="font-size: 14px; margin-bottom: 24px;">Hreflang architecture, multi-currency landing pages, and international backlink outreach scaled a fashion brand across 12 markets in 6 months.</p>
+                        <div style="display:flex; gap:8px; margin-bottom:20px; flex-wrap:wrap;">
+                            <span style="background:rgba(255,0,38,0.1); border:1px solid rgba(255,0,38,0.2); border-radius:20px; padding:3px 10px; font-size:11px; color:var(--color-primary);">International SEO</span>
+                            <span style="background:rgba(255,0,38,0.1); border:1px solid rgba(255,0,38,0.2); border-radius:20px; padding:3px 10px; font-size:11px; color:var(--color-primary);">Hreflang</span>
+                            <span style="background:rgba(255,0,38,0.1); border:1px solid rgba(255,0,38,0.2); border-radius:20px; padding:3px 10px; font-size:11px; color:var(--color-primary);">6 Months</span>
+                        </div>
+                        <a href="#contact" class="btn btn-outline w-full" style="font-size: 12px; padding: 10px 16px;">View Full Case</a>
+                    </div>
+
+                    <!-- Case 4 -->
+                    <div class="scroll-x-card glass-card p-6" style="width: 380px;">
+                        <div class="overflow-hidden rounded-xl aspect-video" style="margin-bottom: 20px; background: linear-gradient(135deg, #121416 0%, #181a1d 50%, #1e2024 100%); display:flex; align-items:center; justify-content:center;">
+                            <div style="text-align:center;">
+                                <div style="font-size:48px; font-weight:800; color:#ff0026; line-height:1;">300%</div>
+                                <div style="font-size:13px; color:rgba(255,255,255,0.6); margin-top:6px; letter-spacing:0.1em;">SOCIAL REACH GROWTH</div>
+                                <div style="margin-top:12px; display:flex; gap:8px; justify-content:center;">
+                                    <div style="background:rgba(255,0,38,0.15); border:1px solid rgba(255,0,38,0.3); border-radius:4px; padding:4px 10px; font-size:11px; color:#ff6680;">Followers: 4K→28K</div>
+                                    <div style="background:rgba(255,0,38,0.3); border:1px solid rgba(255,0,38,0.6); border-radius:4px; padding:4px 10px; font-size:11px; color:#fff;">Eng: 12.4%</div>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="text-primary text-label-caps" style="font-size: 11px;">Social Media · F&B Brand</span>
+                        <h4 class="text-secondary text-headline-lg" style="font-size: 20px; margin: 8px 0 12px 0;">Restaurant Chain Social Takeover</h4>
+                        <p class="text-muted" style="font-size: 14px; margin-bottom: 24px;">Content calendar strategy, influencer micro-partnerships and paid social campaigns grew a restaurant chain from 4K to 28K followers.</p>
+                        <div style="display:flex; gap:8px; margin-bottom:20px; flex-wrap:wrap;">
+                            <span style="background:rgba(255,0,38,0.1); border:1px solid rgba(255,0,38,0.2); border-radius:20px; padding:3px 10px; font-size:11px; color:var(--color-primary);">Social Media</span>
+                            <span style="background:rgba(255,0,38,0.1); border:1px solid rgba(255,0,38,0.2); border-radius:20px; padding:3px 10px; font-size:11px; color:var(--color-primary);">Meta Ads</span>
+                            <span style="background:rgba(255,0,38,0.1); border:1px solid rgba(255,0,38,0.2); border-radius:20px; padding:3px 10px; font-size:11px; color:var(--color-primary);">5 Months</span>
+                        </div>
+                        <a href="#contact" class="btn btn-outline w-full" style="font-size: 12px; padding: 10px 16px;">View Full Case</a>
+                    </div>
+
+                    <!-- Case 5 -->
+                    <div class="scroll-x-card glass-card p-6" style="width: 380px;">
+                        <div class="overflow-hidden rounded-xl aspect-video" style="margin-bottom: 20px; background: linear-gradient(135deg, #121416 0%, #181a1d 50%, #1e2024 100%); display:flex; align-items:center; justify-content:center;">
+                            <div style="text-align:center;">
+                                <div style="font-size:48px; font-weight:800; color:#ff0026; line-height:1;">98</div>
+                                <div style="font-size:13px; color:rgba(255,255,255,0.6); margin-top:6px; letter-spacing:0.1em;">PAGESPEED SCORE (WAS 34)</div>
+                                <div style="margin-top:12px; display:flex; gap:8px; justify-content:center;">
+                                    <div style="background:rgba(255,0,38,0.15); border:1px solid rgba(255,0,38,0.3); border-radius:4px; padding:4px 10px; font-size:11px; color:#ff6680;">LCP: 8.2s → 1.4s</div>
+                                    <div style="background:rgba(255,0,38,0.3); border:1px solid rgba(255,0,38,0.6); border-radius:4px; padding:4px 10px; font-size:11px; color:#fff;">+38% Conv.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="text-primary text-label-caps" style="font-size: 11px;">Web Dev · Core Web Vitals</span>
+                        <h4 class="text-secondary text-headline-lg" style="font-size: 20px; margin: 8px 0 12px 0;">SaaS Platform Speed Overhaul</h4>
+                        <p class="text-muted" style="font-size: 14px; margin-bottom: 24px;">Complete Core Web Vitals rebuild — image optimization, critical CSS, lazy loading and CDN setup pushed PageSpeed from 34 to 98.</p>
+                        <div style="display:flex; gap:8px; margin-bottom:20px; flex-wrap:wrap;">
+                            <span style="background:rgba(255,0,38,0.1); border:1px solid rgba(255,0,38,0.2); border-radius:20px; padding:3px 10px; font-size:11px; color:var(--color-primary);">Core Web Vitals</span>
+                            <span style="background:rgba(255,0,38,0.1); border:1px solid rgba(255,0,38,0.2); border-radius:20px; padding:3px 10px; font-size:11px; color:var(--color-primary);">Web Dev</span>
+                            <span style="background:rgba(255,0,38,0.1); border:1px solid rgba(255,0,38,0.2); border-radius:20px; padding:3px 10px; font-size:11px; color:var(--color-primary);">6 Weeks</span>
+                        </div>
+                        <a href="#contact" class="btn btn-outline w-full" style="font-size: 12px; padding: 10px 16px;">View Full Case</a>
+                    </div>
+
+                    <!-- Case 6 -->
+                    <div class="scroll-x-card glass-card p-6" style="width: 380px;">
+                        <div class="overflow-hidden rounded-xl aspect-video" style="margin-bottom: 20px; background: linear-gradient(135deg, #121416 0%, #181a1d 50%, #1e2024 100%); display:flex; align-items:center; justify-content:center;">
+                            <div style="text-align:center;">
+                                <div style="font-size:48px; font-weight:800; color:#ff0026; line-height:1;">#1</div>
+                                <div style="font-size:13px; color:rgba(255,255,255,0.6); margin-top:6px; letter-spacing:0.1em;">GOOGLE RANKING — 47 KEYWORDS</div>
+                                <div style="margin-top:12px; display:flex; gap:8px; justify-content:center;">
+                                    <div style="background:rgba(255,0,38,0.15); border:1px solid rgba(255,0,38,0.3); border-radius:4px; padding:4px 10px; font-size:11px; color:#ff6680;">DA: 12 → 41</div>
+                                    <div style="background:rgba(255,0,38,0.3); border:1px solid rgba(255,0,38,0.6); border-radius:4px; padding:4px 10px; font-size:11px; color:#fff;">8 Months</div>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="text-primary text-label-caps" style="font-size: 11px;">Brand Strategy · Real Estate</span>
+                        <h4 class="text-secondary text-headline-lg" style="font-size: 20px; margin: 8px 0 12px 0;">Real Estate Brand Authority Build</h4>
+                        <p class="text-muted" style="font-size: 14px; margin-bottom: 24px;">End-to-end brand strategy, authority backlink acquisition and content cluster build a real estate firm to #1 rankings for 47 competitive keywords.</p>
+                        <div style="display:flex; gap:8px; margin-bottom:20px; flex-wrap:wrap;">
+                            <span style="background:rgba(255,0,38,0.1); border:1px solid rgba(255,0,38,0.2); border-radius:20px; padding:3px 10px; font-size:11px; color:var(--color-primary);">Brand Strategy</span>
+                            <span style="background:rgba(255,0,38,0.1); border:1px solid rgba(255,0,38,0.2); border-radius:20px; padding:3px 10px; font-size:11px; color:var(--color-primary);">Link Building</span>
+                            <span style="background:rgba(255,0,38,0.1); border:1px solid rgba(255,0,38,0.2); border-radius:20px; padding:3px 10px; font-size:11px; color:var(--color-primary);">8 Months</span>
+                        </div>
+                        <a href="#contact" class="btn btn-outline w-full" style="font-size: 12px; padding: 10px 16px;">View Full Case</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filterable Portfolio Section -->
+        <section class="section" id="portfolio" style="border-bottom: 1px solid var(--color-outline); background: rgba(0,0,0,0.15);">
+            <div class="container">
+                <div style="margin-bottom: 40px; display:flex; justify-content:space-between; align-items:flex-end;">
+                    <div class="text-center" style="flex:1;">
+                        <span class="text-label-caps text-primary">Visit My Portfolio</span>
+                        <h2 class="text-headline-lg" style="margin-top: 8px;">My Portfolio</h2>
+                    </div>
+                    <div style="display:flex; gap:12px;">
+                        <button id="btnPortLeft" style="width:44px;height:44px;border-radius:50%;border:1px solid var(--color-outline);background:rgba(255,255,255,0.05);color:var(--color-secondary);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.3s ease;" onmouseover="this.style.borderColor='var(--color-primary)';this.style.color='var(--color-primary)'" onmouseout="this.style.borderColor='var(--color-outline)';this.style.color='var(--color-secondary)'">
+                            <span class="material-symbols-outlined">arrow_back</span>
+                        </button>
+                        <button id="btnPortRight" style="width:44px;height:44px;border-radius:50%;border:1px solid var(--color-outline);background:rgba(255,255,255,0.05);color:var(--color-secondary);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.3s ease;" onmouseover="this.style.borderColor='var(--color-primary)';this.style.color='var(--color-primary)'" onmouseout="this.style.borderColor='var(--color-outline)';this.style.color='var(--color-secondary)'">
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Filters -->
+                <div class="portfolio-tabs flex justify-center" style="gap: 16px; margin-bottom: 48px; flex-wrap: wrap;">
+                    <button class="tab-btn active" data-category="all">All</button>
+                    <button class="tab-btn" data-category="seo">SEO</button>
+                    <button class="tab-btn" data-category="marketing">Marketing</button>
+                    <button class="tab-btn" data-category="technical">Technical</button>
+                    <button class="tab-btn" data-category="content">Content</button>
+                    <button class="tab-btn" data-category="Web">Web</button>
+                </div>
+
+                <!-- Horizontal Scroll Grid -->
+                <div style="padding-top: 12px;">
+                <div id="portfolioScrollTrack" style="display:flex; gap:24px; overflow-x:auto; scroll-behavior:smooth; padding: 8px 4px 16px 4px; scrollbar-width:none; -ms-overflow-style:none; cursor:grab;">
+                <style>#portfolioScrollTrack::-webkit-scrollbar{display:none;}</style>
+                <div class="portfolio-grid" style="display:flex; gap:24px; flex-wrap:nowrap;">
+
+                <!-- Website 1 -->
+                    <div class="card-inner p-6" data-category="Web" style="min-width:360px; max-width:360px; flex-shrink:0;">
+                        <div style="position:relative; margin-bottom:20px; border-radius:12px; overflow:hidden; background:#0d0d0d; border:1px solid rgba(255,255,255,0.08);">
+                            <div style="aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#0f0f0f,#1a1a1a); position:relative;">
+                                <div style="text-align:center;">
+                                    <span class="material-symbols-outlined" style="font-size:48px; color:rgba(255,0,38,0.4);">language</span>
+                                    <p style="font-size:12px; color:rgba(255,255,255,0.3); margin-top:8px; letter-spacing:0.1em;">YOUR SCREENSHOT HERE</p>
+                                </div>
+                                <div style="position:absolute;top:10px;right:10px;background:rgba(255,0,38,0.15);border:1px solid rgba(255,0,38,0.3);border-radius:6px;padding:3px 10px;font-size:11px;color:#ff0026;">Live</div>
+                             </div>
+                        </div>
+                        <div class="flex justify-between items-center" style="margin-bottom:12px;">
+                            <span class="chip">E-commerce</span>
+                            <a href="#" style="font-size:12px;color:#ff0026;text-decoration:none;display:flex;align-items:center;gap:4px;">Visit <span class="material-symbols-outlined" style="font-size:14px;">open_in_new</span></a>
+                        </div>
+                        <h3 class="text-secondary" style="font-size:18px;font-weight:700;margin-bottom:8px;">Client Website #1</h3>
+                        <p class="text-muted" style="font-size:13px;line-height:1.6;">Full e-commerce website with payment integration, product management, and SEO-optimized structure.</p>
+                        <div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;">
+                             <span style="background:rgba(255,0,38,0.1);border:1px solid rgba(255,0,38,0.2);border-radius:20px;padding:3px 10px;font-size:11px;color:#ff0026;">WordPress</span>
+                            <span style="background:rgba(255,0,38,0.1);border:1px solid rgba(255,0,38,0.2);border-radius:20px;padding:3px 10px;font-size:11px;color:#ff0026;">WooCommerce</span>
+                        </div>
+                    </div>
+                    <!-- Project 1 -->
+                    <div class="portfolio-card card-inner p-6" data-category="seo" style="min-width:340px; max-width:340px; flex-shrink:0;">
+                        <div class="overflow-hidden rounded-xl aspect-video" style="margin-bottom: 24px;">
+                            <img style="width:100%; height:100%; object-fit:cover;" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt="Ecommerce SEO"/>
+                        </div>
+                        <div class="flex justify-between items-center" style="margin-bottom: 16px;">
+                            <span class="chip">Ecommerce SEO</span>
+                            <span class="text-primary" style="font-size: 13px; font-weight: 600;">1,257% Organic Growth</span>
+                        </div>
+                        <h3 class="text-secondary" style="font-size: 22px; font-weight: 700;">Arogga Pharmacy Growth Campaign</h3>
+                        <p class="text-muted" style="font-size: 14px; margin-top: 10px;">Complete topical cluster strategy and structural overhaul driving massive organic traffic uplift for Bangladesh's top pharmacy.</p>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="portfolio-card card-inner p-6" data-category="marketing" style="min-width:340px; max-width:340px; flex-shrink:0;">
+                        <div class="overflow-hidden rounded-xl aspect-video" style="margin-bottom: 24px;">
+                            <img style="width:100%; height:100%; object-fit:cover;" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80" alt="Legal Practice"/>
+                        </div>
+                        <div class="flex justify-between items-center" style="margin-bottom: 16px;">
+                            <span class="chip">Local SEO</span>
+                            <span class="text-primary" style="font-size: 13px; font-weight: 600;">420% Marketing ROI</span>
+                        </div>
+                        <h3 class="text-secondary" style="font-size: 22px; font-weight: 700;">Legal Practice Lead Generation</h3>
+                        <p class="text-muted" style="font-size: 14px; margin-top: 10px;">Hyper-local SEO and Google Business optimization for a Dhaka law firm, generating 3x more qualified inbound leads.</p>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="portfolio-card card-inner p-6" data-category="technical" style="min-width:340px; max-width:340px; flex-shrink:0;">
+                        <div class="overflow-hidden rounded-xl aspect-video" style="margin-bottom: 24px;">
+                            <img style="width:100%; height:100%; object-fit:cover;" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt="Core Web Vitals"/>
+                        </div>
+                        <div class="flex justify-between items-center" style="margin-bottom: 16px;">
+                            <span class="chip">Technical SEO</span>
+                            <span class="text-primary" style="font-size: 13px; font-weight: 600;">98 PageSpeed Score</span>
+                        </div>
+                        <h3 class="text-secondary" style="font-size: 22px; font-weight: 700;">Core Web Vitals Overhaul</h3>
+                        <p class="text-muted" style="font-size: 14px; margin-top: 10px;">Full technical audit and rebuild for a SaaS platform — fixing LCP, CLS, and FID to achieve top Core Web Vitals scores.</p>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="portfolio-card card-inner p-6" data-category="content" style="min-width:340px; max-width:340px; flex-shrink:0;">
+                        <div class="overflow-hidden rounded-xl aspect-video" style="margin-bottom: 24px;">
+                            <img style="width:100%; height:100%; object-fit:cover;" src="https://images.unsplash.com/photo-1542435503-956c469947f6?w=600&q=80" alt="Content Strategy"/>
+                        </div>
+                        <div class="flex justify-between items-center" style="margin-bottom: 16px;">
+                            <span class="chip">Content SEO</span>
+                            <span class="text-primary" style="font-size: 13px; font-weight: 600;">300+ Articles Ranked</span>
+                        </div>
+                        <h3 class="text-secondary" style="font-size: 22px; font-weight: 700;">SaaS Blog Authority Build</h3>
+                        <p class="text-muted" style="font-size: 14px; margin-top: 10px;">Built a full semantic content hub for a B2B SaaS brand, ranking 300+ articles on page one within 8 months.</p>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="portfolio-card card-inner p-6" data-category="seo" style="min-width:340px; max-width:340px; flex-shrink:0;">
+                        <div class="overflow-hidden rounded-xl aspect-video" style="margin-bottom: 24px;">
+                            <img style="width:100%; height:100%; object-fit:cover;" src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=600&q=80" alt="Real Estate SEO"/>
+                        </div>
+                        <div class="flex justify-between items-center" style="margin-bottom: 16px;">
+                            <span class="chip">Real Estate SEO</span>
+                            <span class="text-primary" style="font-size: 13px; font-weight: 600;">580% Traffic Increase</span>
+                        </div>
+                        <h3 class="text-secondary" style="font-size: 22px; font-weight: 700;">Real Estate Portal Domination</h3>
+                        <p class="text-muted" style="font-size: 14px; margin-top: 10px;">Entity-based SEO and schema markup strategy for a property listing site, dominating local real estate SERPs.</p>
+                    </div>
+
+                    <!-- Project 6 -->
+                    <div class="portfolio-card card-inner p-6" data-category="marketing" style="min-width:340px; max-width:340px; flex-shrink:0;">
+                        <div class="overflow-hidden rounded-xl aspect-video" style="margin-bottom: 24px;">
+                            <img style="width:100%; height:100%; object-fit:cover;" src="https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=600&q=80" alt="Social Media Marketing"/>
+                        </div>
+                        <div class="flex justify-between items-center" style="margin-bottom: 16px;">
+                            <span class="chip">Social Marketing</span>
+                            <span class="text-primary" style="font-size: 13px; font-weight: 600;">2.4M Impressions/mo</span>
+                        </div>
+                        <h3 class="text-secondary" style="font-size: 22px; font-weight: 700;">Fashion Brand Social Growth</h3>
+                        <p class="text-muted" style="font-size: 14px; margin-top: 10px;">Integrated SEO + social media funnel for a fashion brand, scaling monthly impressions to 2.4M with measurable conversions.</p>
+                    </div>
+
+                    <!-- Project 7 -->
+                    <div class="portfolio-card card-inner p-6" data-category="technical" style="min-width:340px; max-width:340px; flex-shrink:0;">
+                        <div class="overflow-hidden rounded-xl aspect-video" style="margin-bottom: 24px;">
+                            <img style="width:100%; height:100%; object-fit:cover;" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80" alt="International SEO"/>
+                        </div>
+                        <div class="flex justify-between items-center" style="margin-bottom: 16px;">
+                            <span class="chip">Intl. SEO</span>
+                            <span class="text-primary" style="font-size: 13px; font-weight: 600;">80+ Countries Reached</span>
+                        </div>
+                        <h3 class="text-secondary" style="font-size: 22px; font-weight: 700;">Global Hreflang Architecture</h3>
+                        <p class="text-muted" style="font-size: 14px; margin-top: 10px;">Implemented hreflang, geotargeting, and CDN structure for a multinational brand expanding across 80+ country markets.</p>
+                    </div>
+
+                    <!-- Project 8 -->
+                    <div class="portfolio-card card-inner p-6" data-category="content" style="min-width:340px; max-width:340px; flex-shrink:0;">
+                        <div class="overflow-hidden rounded-xl aspect-video" style="margin-bottom: 24px;">
+                            <img style="width:100%; height:100%; object-fit:cover;" src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=600&q=80" alt="Travel Blog"/>
+                        </div>
+                        <div class="flex justify-between items-center" style="margin-bottom: 16px;">
+                            <span class="chip">Travel & Hosp</span>
+                            <span class="text-primary" style="font-size: 13px; font-weight: 600;">850K Monthly Visitors</span>
+                        </div>
+                        <h3 class="text-secondary" style="font-size: 22px; font-weight: 700;">Travel Blog Content Empire</h3>
+                        <p class="text-muted" style="font-size: 14px; margin-top: 10px;">Built a topical authority moat for a travel media site, growing from 30K to 850K monthly organic sessions in 14 months.</p>
+                    </div>
+
+                    <!-- Project 9 -->
+                    <div class="portfolio-card card-inner p-6" data-category="seo" style="min-width:340px; max-width:340px; flex-shrink:0;">
+                        <div class="overflow-hidden rounded-xl aspect-video" style="margin-bottom: 24px;">
+                            <img style="width:100%; height:100%; object-fit:cover;" src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80" alt="Healthcare SEO"/>
+                        </div>
+                        <div class="flex justify-between items-center" style="margin-bottom: 16px;">
+                            <span class="chip">Health SEO</span>
+                            <span class="text-primary" style="font-size: 13px; font-weight: 600;">+340% Appointment Leads</span>
+                        </div>
+                        <h3 class="text-secondary" style="font-size: 22px; font-weight: 700;">Hospital & Clinic SEO System</h3>
+                        <p class="text-muted" style="font-size: 14px; margin-top: 10px;">YMYL-compliant content strategy and E-E-A-T signals for a hospital group, tripling online appointment bookings.</p>
+                    </div>
+
+                    <!-- Project 10 -->
+                    <div class="portfolio-card card-inner p-6" data-category="marketing" style="min-width:340px; max-width:340px; flex-shrink:0;">
+                        <div class="overflow-hidden rounded-xl aspect-video" style="margin-bottom: 24px;">
+                            <img style="width:100%; height:100%; object-fit:cover;" src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=600&q=80" alt="Fintech SEO"/>
+                        </div>
+                        <div class="flex justify-between items-center" style="margin-bottom: 16px;">
+                            <span class="chip">Startup Growth</span>
+                            <span class="text-primary" style="font-size: 13px; font-weight: 600;">0 → 100K Users</span>
+                        </div>
+                        <h3 class="text-secondary" style="font-size: 22px; font-weight: 700;">Fintech Startup Launch SEO</h3>
+                        <p class="text-muted" style="font-size: 14px; margin-top: 10px;">Full-funnel organic growth strategy for a fintech startup — from zero to 100K monthly users in under one year.</p>
+                    </div>
+
+                </div><!-- end portfolio-grid flex -->
+                </div><!-- end portfolioScrollTrack -->
+                </div><!-- end padding-top wrapper -->
+
+                <!-- Website Projects Subsection -->
+                <div style="margin-top: 80px;">
+                    <div style="margin-bottom: 40px; display:flex; justify-content:space-between; align-items:flex-end;">
+                        <div>
+                            <span class="text-label-caps text-primary">Web Development</span>
+                            <h2 class="text-headline-lg" style="margin-top: 8px;">Websites I Built</h2>
+                        </div>
+                        <div style="display:flex; gap:12px;">
+                            <button id="btnWebLeft" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.05);color:var(--color-secondary);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.3s ease;" onmouseover="this.style.borderColor='#ff0026';this.style.color='#ff0026';" onmouseout="this.style.borderColor='rgba(255,255,255,0.18)';this.style.color='var(--color-secondary)';">
+                                <span class="material-symbols-outlined">arrow_back</span>
+                            </button>
+                            <button id="btnWebRight" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.05);color:var(--color-secondary);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.3s ease;" onmouseover="this.style.borderColor='#ff0026';this.style.color='#ff0026';" onmouseout="this.style.borderColor='rgba(255,255,255,0.18)';this.style.color='var(--color-secondary)';">
+                                <span class="material-symbols-outlined">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div style="padding-top:8px;">
+                    <div id="webScrollTrack" style="display:flex; gap:24px; overflow-x:auto; scroll-behavior:smooth; padding:8px 4px 16px 4px; scrollbar-width:none; -ms-overflow-style:none; cursor:grab;">
+                    <style>#webScrollTrack::-webkit-scrollbar{display:none;}</style>
+
+                        <!-- Website 1 -->
+                        <div class="card-inner p-6" style="min-width:360px; max-width:360px; flex-shrink:0;">
+                            <div style="position:relative; margin-bottom:20px; border-radius:12px; overflow:hidden; background:#0d0d0d; border:1px solid rgba(255,255,255,0.08);">
+                                <div style="aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#0f0f0f,#1a1a1a); position:relative;">
+                                    <div style="text-align:center;">
+                                        <span class="material-symbols-outlined" style="font-size:48px; color:rgba(255,0,38,0.4);">language</span>
+                                        <p style="font-size:12px; color:rgba(255,255,255,0.3); margin-top:8px; letter-spacing:0.1em;">YOUR SCREENSHOT HERE</p>
+                                    </div>
+                                    <div style="position:absolute;top:10px;right:10px;background:rgba(255,0,38,0.15);border:1px solid rgba(255,0,38,0.3);border-radius:6px;padding:3px 10px;font-size:11px;color:#ff0026;">Live</div>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center" style="margin-bottom:12px;">
+                                <span class="chip">E-commerce</span>
+                                <a href="#" style="font-size:12px;color:#ff0026;text-decoration:none;display:flex;align-items:center;gap:4px;">Visit <span class="material-symbols-outlined" style="font-size:14px;">open_in_new</span></a>
+                            </div>
+                            <h3 class="text-secondary" style="font-size:18px;font-weight:700;margin-bottom:8px;">Client Website #1</h3>
+                            <p class="text-muted" style="font-size:13px;line-height:1.6;">Full e-commerce website with payment integration, product management, and SEO-optimized structure.</p>
+                            <div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;">
+                                <span style="background:rgba(255,0,38,0.1);border:1px solid rgba(255,0,38,0.2);border-radius:20px;padding:3px 10px;font-size:11px;color:#ff0026;">WordPress</span>
+                                <span style="background:rgba(255,0,38,0.1);border:1px solid rgba(255,0,38,0.2);border-radius:20px;padding:3px 10px;font-size:11px;color:#ff0026;">WooCommerce</span>
+                            </div>
+                        </div>
+
+                        <!-- Website 2 -->
+                        <div class="card-inner p-6" style="min-width:360px; max-width:360px; flex-shrink:0;">
+                            <div style="position:relative; margin-bottom:20px; border-radius:12px; overflow:hidden; background:#0d0d0d; border:1px solid rgba(255,255,255,0.08);">
+                                <div style="aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#0f0f0f,#1a1a1a);">
+                                    <div style="text-align:center;">
+                                        <span class="material-symbols-outlined" style="font-size:48px; color:rgba(255,0,38,0.4);">language</span>
+                                        <p style="font-size:12px; color:rgba(255,255,255,0.3); margin-top:8px; letter-spacing:0.1em;">YOUR SCREENSHOT HERE</p>
+                                    </div>
+                                    <div style="position:absolute;top:10px;right:10px;background:rgba(255,0,38,0.15);border:1px solid rgba(255,0,38,0.3);border-radius:6px;padding:3px 10px;font-size:11px;color:#ff0026;">Live</div>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center" style="margin-bottom:12px;">
+                                <span class="chip">Local Business</span>
+                                <a href="#" style="font-size:12px;color:#ff0026;text-decoration:none;display:flex;align-items:center;gap:4px;">Visit <span class="material-symbols-outlined" style="font-size:14px;">open_in_new</span></a>
+                            </div>
+                            <h3 class="text-secondary" style="font-size:18px;font-weight:700;margin-bottom:8px;">Client Website #2</h3>
+                            <p class="text-muted" style="font-size:13px;line-height:1.6;">Local business website with Google Maps integration, contact forms, and local SEO optimization.</p>
+                            <div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;">
+                                <span style="background:rgba(255,0,38,0.1);border:1px solid rgba(255,0,38,0.2);border-radius:20px;padding:3px 10px;font-size:11px;color:#ff0026;">WordPress</span>
+                                <span style="background:rgba(255,0,38,0.1);border:1px solid rgba(255,0,38,0.2);border-radius:20px;padding:3px 10px;font-size:11px;color:#ff0026;">Local SEO</span>
+                            </div>
+                        </div>
+
+                        <!-- Website 3 -->
+                        <div class="card-inner p-6" style="min-width:360px; max-width:360px; flex-shrink:0;">
+                            <div style="position:relative; margin-bottom:20px; border-radius:12px; overflow:hidden; background:#0d0d0d; border:1px solid rgba(255,255,255,0.08);">
+                                <div style="aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#0f0f0f,#1a1a1a);">
+                                    <div style="text-align:center;">
+                                        <span class="material-symbols-outlined" style="font-size:48px; color:rgba(255,0,38,0.4);">language</span>
+                                        <p style="font-size:12px; color:rgba(255,255,255,0.3); margin-top:8px; letter-spacing:0.1em;">YOUR SCREENSHOT HERE</p>
+                                    </div>
+                                    <div style="position:absolute;top:10px;right:10px;background:rgba(255,0,38,0.15);border:1px solid rgba(255,0,38,0.3);border-radius:6px;padding:3px 10px;font-size:11px;color:#ff0026;">Live</div>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center" style="margin-bottom:12px;">
+                                <span class="chip">Portfolio</span>
+                                <a href="#" style="font-size:12px;color:#ff0026;text-decoration:none;display:flex;align-items:center;gap:4px;">Visit <span class="material-symbols-outlined" style="font-size:14px;">open_in_new</span></a>
+                            </div>
+                            <h3 class="text-secondary" style="font-size:18px;font-weight:700;margin-bottom:8px;">Client Website #3</h3>
+                            <p class="text-muted" style="font-size:13px;line-height:1.6;">Personal portfolio website with modern UI, dark theme, smooth animations and full SEO setup.</p>
+                            <div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;">
+                                <span style="background:rgba(255,0,38,0.1);border:1px solid rgba(255,0,38,0.2);border-radius:20px;padding:3px 10px;font-size:11px;color:#ff0026;">HTML/CSS</span>
+                                <span style="background:rgba(255,0,38,0.1);border:1px solid rgba(255,0,38,0.2);border-radius:20px;padding:3px 10px;font-size:11px;color:#ff0026;">JavaScript</span>
+                            </div>
+                        </div>
+
+                        <!-- Website 4 -->
+                        <div class="card-inner p-6" style="min-width:360px; max-width:360px; flex-shrink:0;">
+                            <div style="position:relative; margin-bottom:20px; border-radius:12px; overflow:hidden; background:#0d0d0d; border:1px solid rgba(255,255,255,0.08);">
+                                <div style="aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#0f0f0f,#1a1a1a);">
+                                    <div style="text-align:center;">
+                                        <span class="material-symbols-outlined" style="font-size:48px; color:rgba(255,0,38,0.4);">language</span>
+                                        <p style="font-size:12px; color:rgba(255,255,255,0.3); margin-top:8px; letter-spacing:0.1em;">YOUR SCREENSHOT HERE</p>
+                                    </div>
+                                    <div style="position:absolute;top:10px;right:10px;background:rgba(255,0,38,0.15);border:1px solid rgba(255,0,38,0.3);border-radius:6px;padding:3px 10px;font-size:11px;color:#ff0026;">Live</div>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center" style="margin-bottom:12px;">
+                                <span class="chip">Healthcare</span>
+                                <a href="#" style="font-size:12px;color:#ff0026;text-decoration:none;display:flex;align-items:center;gap:4px;">Visit <span class="material-symbols-outlined" style="font-size:14px;">open_in_new</span></a>
+                            </div>
+                            <h3 class="text-secondary" style="font-size:18px;font-weight:700;margin-bottom:8px;">Client Website #4</h3>
+                            <p class="text-muted" style="font-size:13px;line-height:1.6;">Healthcare clinic website with appointment booking, doctor profiles, and YMYL-compliant SEO content.</p>
+                            <div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;">
+                                <span style="background:rgba(255,0,38,0.1);border:1px solid rgba(255,0,38,0.2);border-radius:20px;padding:3px 10px;font-size:11px;color:#ff0026;">WordPress</span>
+                                <span style="background:rgba(255,0,38,0.1);border:1px solid rgba(255,0,38,0.2);border-radius:20px;padding:3px 10px;font-size:11px;color:#ff0026;">Healthcare SEO</span>
+                            </div>
+                        </div>
+
+                        <!-- Website 5 -->
+                        <div class="card-inner p-6" style="min-width:360px; max-width:360px; flex-shrink:0;">
+                            <div style="position:relative; margin-bottom:20px; border-radius:12px; overflow:hidden; background:#0d0d0d; border:1px solid rgba(255,255,255,0.08);">
+                                <div style="aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#0f0f0f,#1a1a1a);">
+                                    <div style="text-align:center;">
+                                        <span class="material-symbols-outlined" style="font-size:48px; color:rgba(255,0,38,0.4);">language</span>
+                                        <p style="font-size:12px; color:rgba(255,255,255,0.3); margin-top:8px; letter-spacing:0.1em;">YOUR SCREENSHOT HERE</p>
+                                    </div>
+                                    <div style="position:absolute;top:10px;right:10px;background:rgba(255,0,38,0.15);border:1px solid rgba(255,0,38,0.3);border-radius:6px;padding:3px 10px;font-size:11px;color:#ff0026;">Live</div>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center" style="margin-bottom:12px;">
+                                <span class="chip">Real Estate</span>
+                                <a href="#" style="font-size:12px;color:#ff0026;text-decoration:none;display:flex;align-items:center;gap:4px;">Visit <span class="material-symbols-outlined" style="font-size:14px;">open_in_new</span></a>
+                            </div>
+                            <h3 class="text-secondary" style="font-size:18px;font-weight:700;margin-bottom:8px;">Client Website #5</h3>
+                            <p class="text-muted" style="font-size:13px;line-height:1.6;">Real estate listing portal with property search, agent profiles, and schema markup for rich snippets.</p>
+                            <div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;">
+                                <span style="background:rgba(255,0,38,0.1);border:1px solid rgba(255,0,38,0.2);border-radius:20px;padding:3px 10px;font-size:11px;color:#ff0026;">WordPress</span>
+                                <span style="background:rgba(255,0,38,0.1);border:1px solid rgba(255,0,38,0.2);border-radius:20px;padding:3px 10px;font-size:11px;color:#ff0026;">Schema Markup</span>
+                            </div>
+                        </div>
+
+                        <!-- Website 6 -->
+                        <div class="card-inner p-6" style="min-width:360px; max-width:360px; flex-shrink:0;">
+                            <div style="position:relative; margin-bottom:20px; border-radius:12px; overflow:hidden; background:#0d0d0d; border:1px solid rgba(255,255,255,0.08);">
+                                <div style="aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#0f0f0f,#1a1a1a);">
+                                    <div style="text-align:center;">
+                                        <span class="material-symbols-outlined" style="font-size:48px; color:rgba(255,0,38,0.4);">language</span>
+                                        <p style="font-size:12px; color:rgba(255,255,255,0.3); margin-top:8px; letter-spacing:0.1em;">YOUR SCREENSHOT HERE</p>
+                                    </div>
+                                    <div style="position:absolute;top:10px;right:10px;background:rgba(255,0,38,0.15);border:1px solid rgba(255,0,38,0.3);border-radius:6px;padding:3px 10px;font-size:11px;color:#ff0026;">Live</div>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center" style="margin-bottom:12px;">
+                                <span class="chip">Restaurant</span>
+                                <a href="#" style="font-size:12px;color:#ff0026;text-decoration:none;display:flex;align-items:center;gap:4px;">Visit <span class="material-symbols-outlined" style="font-size:14px;">open_in_new</span></a>
+                            </div>
+                            <h3 class="text-secondary" style="font-size:18px;font-weight:700;margin-bottom:8px;">Client Website #6</h3>
+                            <p class="text-muted" style="font-size:13px;line-height:1.6;">Restaurant website with online menu, reservation system, and local SEO for Google Maps visibility.</p>
+                            <div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;">
+                                <span style="background:rgba(255,0,38,0.1);border:1px solid rgba(255,0,38,0.2);border-radius:20px;padding:3px 10px;font-size:11px;color:#ff0026;">WordPress</span>
+                                <span style="background:rgba(255,0,38,0.1);border:1px solid rgba(255,0,38,0.2);border-radius:20px;padding:3px 10px;font-size:11px;color:#ff0026;">Local SEO</span>
+                            </div>
+                        </div>
+
+                        <!-- Website 7 -->
+                        <div class="card-inner p-6" style="min-width:360px; max-width:360px; flex-shrink:0;">
+                            <div style="position:relative; margin-bottom:20px; border-radius:12px; overflow:hidden; background:#0d0d0d; border:1px solid rgba(255,255,255,0.08);">
+                                <div style="aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#0f0f0f,#1a1a1a);">
+                                    <div style="text-align:center;">
+                                        <span class="material-symbols-outlined" style="font-size:48px; color:rgba(255,0,38,0.4);">language</span>
+                                        <p style="font-size:12px; color:rgba(255,255,255,0.3); margin-top:8px; letter-spacing:0.1em;">YOUR SCREENSHOT HERE</p>
+                                    </div>
+                                    <div style="position:absolute;top:10px;right:10px;background:rgba(255,0,38,0.15);border:1px solid rgba(255,0,38,0.3);border-radius:6px;padding:3px 10px;font-size:11px;color:#ff0026;">Live</div>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center" style="margin-bottom:12px;">
+                                <span class="chip">SaaS</span>
+                                <a href="#" style="font-size:12px;color:#ff0026;text-decoration:none;display:flex;align-items:center;gap:4px;">Visit <span class="material-symbols-outlined" style="font-size:14px;">open_in_new</span></a>
+                            </div>
+                            <h3 class="text-secondary" style="font-size:18px;font-weight:700;margin-bottom:8px;">Client Website #7</h3>
+                            <p class="text-muted" style="font-size:13px;line-height:1.6;">SaaS landing page with conversion-optimized copy, fast loading speed, and technical SEO foundation.</p>
+                            <div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;">
+                                <span style="background:rgba(255,0,38,0.1);border:1px solid rgba(255,0,38,0.2);border-radius:20px;padding:3px 10px;font-size:11px;color:#ff0026;">HTML/CSS</span>
+                                <span style="background:rgba(255,0,38,0.1);border:1px solid rgba(255,0,38,0.2);border-radius:20px;padding:3px 10px;font-size:11px;color:#ff0026;">Technical SEO</span>
+                            </div>
+                        </div>
+
+                        <!-- Website 8 -->
+                        <div class="card-inner p-6" style="min-width:360px; max-width:360px; flex-shrink:0;">
+                            <div style="position:relative; margin-bottom:20px; border-radius:12px; overflow:hidden; background:#0d0d0d; border:1px solid rgba(255,255,255,0.08);">
+                                <div style="aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#0f0f0f,#1a1a1a);">
+                                    <div style="text-align:center;">
+                                        <span class="material-symbols-outlined" style="font-size:48px; color:rgba(255,0,38,0.4);">language</span>
+                                        <p style="font-size:12px; color:rgba(255,255,255,0.3); margin-top:8px; letter-spacing:0.1em;">YOUR SCREENSHOT HERE</p>
+                                    </div>
+                                    <div style="position:absolute;top:10px;right:10px;background:rgba(255,0,38,0.15);border:1px solid rgba(255,0,38,0.3);border-radius:6px;padding:3px 10px;font-size:11px;color:#ff0026;">Live</div>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center" style="margin-bottom:12px;">
+                                <span class="chip">Law Firm</span>
+                                <a href="#" style="font-size:12px;color:#ff0026;text-decoration:none;display:flex;align-items:center;gap:4px;">Visit <span class="material-symbols-outlined" style="font-size:14px;">open_in_new</span></a>
+                            </div>
+                            <h3 class="text-secondary" style="font-size:18px;font-weight:700;margin-bottom:8px;">Client Website #8</h3>
+                            <p class="text-muted" style="font-size:13px;line-height:1.6;">Law firm website with practice area pages, attorney profiles, and E-E-A-T optimized legal content.</p>
+                            <div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;">
+                                <span style="background:rgba(255,0,38,0.1);border:1px solid rgba(255,0,38,0.2);border-radius:20px;padding:3px 10px;font-size:11px;color:#ff0026;">WordPress</span>
+                                <span style="background:rgba(255,0,38,0.1);border:1px solid rgba(255,0,38,0.2);border-radius:20px;padding:3px 10px;font-size:11px;color:#ff0026;">E-E-A-T SEO</span>
+                            </div>
+                        </div>
+
+                        <!-- Website 9 -->
+                        <div class="card-inner p-6" style="min-width:360px; max-width:360px; flex-shrink:0;">
+                            <div style="position:relative; margin-bottom:20px; border-radius:12px; overflow:hidden; background:#0d0d0d; border:1px solid rgba(255,255,255,0.08);">
+                                <div style="aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#0f0f0f,#1a1a1a);">
+                                    <div style="text-align:center;">
+                                        <span class="material-symbols-outlined" style="font-size:48px; color:rgba(255,0,38,0.4);">language</span>
+                                        <p style="font-size:12px; color:rgba(255,255,255,0.3); margin-top:8px; letter-spacing:0.1em;">YOUR SCREENSHOT HERE</p>
+                                    </div>
+                                    <div style="position:absolute;top:10px;right:10px;background:rgba(255,0,38,0.15);border:1px solid rgba(255,0,38,0.3);border-radius:6px;padding:3px 10px;font-size:11px;color:#ff0026;">Live</div>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center" style="margin-bottom:12px;">
+                                <span class="chip">Fashion</span>
+                                <a href="#" style="font-size:12px;color:#ff0026;text-decoration:none;display:flex;align-items:center;gap:4px;">Visit <span class="material-symbols-outlined" style="font-size:14px;">open_in_new</span></a>
+                            </div>
+                            <h3 class="text-secondary" style="font-size:18px;font-weight:700;margin-bottom:8px;">Client Website #9</h3>
+                            <p class="text-muted" style="font-size:13px;line-height:1.6;">Fashion brand website with lookbook, product catalog, and social media integration for brand awareness.</p>
+                            <div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;">
+                                <span style="background:rgba(255,0,38,0.1);border:1px solid rgba(255,0,38,0.2);border-radius:20px;padding:3px 10px;font-size:11px;color:#ff0026;">Shopify</span>
+                                <span style="background:rgba(255,0,38,0.1);border:1px solid rgba(255,0,38,0.2);border-radius:20px;padding:3px 10px;font-size:11px;color:#ff0026;">Ecom SEO</span>
+                            </div>
+                        </div>
+
+                        <!-- Website 10 -->
+                        <div class="card-inner p-6" style="min-width:360px; max-width:360px; flex-shrink:0;">
+                            <div style="position:relative; margin-bottom:20px; border-radius:12px; overflow:hidden; background:#0d0d0d; border:1px solid rgba(255,255,255,0.08);">
+                                <div style="aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#0f0f0f,#1a1a1a);">
+                                    <div style="text-align:center;">
+                                        <span class="material-symbols-outlined" style="font-size:48px; color:rgba(255,0,38,0.4);">language</span>
+                                        <p style="font-size:12px; color:rgba(255,255,255,0.3); margin-top:8px; letter-spacing:0.1em;">YOUR SCREENSHOT HERE</p>
+                                    </div>
+                                    <div style="position:absolute;top:10px;right:10px;background:rgba(255,0,38,0.15);border:1px solid rgba(255,0,38,0.3);border-radius:6px;padding:3px 10px;font-size:11px;color:#ff0026;">Live</div>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center" style="margin-bottom:12px;">
+                                <span class="chip">Travel</span>
+                                <a href="#" style="font-size:12px;color:#ff0026;text-decoration:none;display:flex;align-items:center;gap:4px;">Visit <span class="material-symbols-outlined" style="font-size:14px;">open_in_new</span></a>
+                            </div>
+                            <h3 class="text-secondary" style="font-size:18px;font-weight:700;margin-bottom:8px;">Client Website #10</h3>
+                            <p class="text-muted" style="font-size:13px;line-height:1.6;">Travel agency website with destination pages, tour packages, and topical authority content cluster.</p>
+                            <div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;">
+                                <span style="background:rgba(255,0,38,0.1);border:1px solid rgba(255,0,38,0.2);border-radius:20px;padding:3px 10px;font-size:11px;color:#ff0026;">WordPress</span>
+                                <span style="background:rgba(255,0,38,0.1);border:1px solid rgba(255,0,38,0.2);border-radius:20px;padding:3px 10px;font-size:11px;color:#ff0026;">Content SEO</span>
+                            </div>
+                        </div>
+
+                    </div><!-- end webScrollTrack -->
+                    </div><!-- end padding wrapper -->
+                </div><!-- end website projects subsection -->
+
+                <script>
+                (function(){
+                    var track = document.getElementById('webScrollTrack');
+                    if (!track) return;
+                    var isDown = false, startX, startScrollLeft;
+                    track.addEventListener('mousedown', function(e) {
+                        isDown = true; track.style.cursor = 'grabbing';
+                        startX = e.pageX; startScrollLeft = track.scrollLeft;
+                        e.preventDefault();
+                    });
+                    document.addEventListener('mouseup', function() { if (!isDown) return; isDown = false; track.style.cursor = 'grab'; });
+                    document.addEventListener('mousemove', function(e) { if (!isDown) return; track.scrollLeft = startScrollLeft - (e.pageX - startX); });
+                    var btnLeft = document.getElementById('btnWebLeft');
+                    var btnRight = document.getElementById('btnWebRight');
+                    if (btnLeft) btnLeft.addEventListener('click', function() { track.scrollLeft -= 390; });
+                    if (btnRight) btnRight.addEventListener('click', function() { track.scrollLeft += 390; });
+                })();
+                </script>
+
+                <script>
+                (function(){
+                    // Filter tabs
+                    const tabs = document.querySelectorAll('#portfolio .tab-btn');
+                    const cards = document.querySelectorAll('#portfolio .portfolio-card');
+                    tabs.forEach(function(btn){
+                        btn.addEventListener('click', function(){
+                            tabs.forEach(function(t){ t.classList.remove('active'); });
+                            btn.classList.add('active');
+                            var cat = btn.getAttribute('data-category');
+                            cards.forEach(function(card){
+                                if(cat === 'all' || card.getAttribute('data-category') === cat){
+                                    card.style.display = '';
+                                } else {
+                                    card.style.display = 'none';
+                                }
+                            });
+                        });
+                    });
+
+                    // Horizontal scroll
+                    var track = document.getElementById('portfolioScrollTrack');
+                    if (!track) return;
+
+                    var isDown = false, startX, startScrollLeft;
+                    track.addEventListener('mousedown', function(e) {
+                        isDown = true;
+                        track.style.cursor = 'grabbing';
+                        startX = e.pageX;
+                        startScrollLeft = track.scrollLeft;
+                        e.preventDefault();
+                    });
+                    document.addEventListener('mouseup', function() {
+                        if (!isDown) return;
+                        isDown = false;
+                        track.style.cursor = 'grab';
+                    });
+                    document.addEventListener('mousemove', function(e) {
+                        if (!isDown) return;
+                        var dx = e.pageX - startX;
+                        track.scrollLeft = startScrollLeft - dx;
+                    });
+
+                    // Arrow buttons
+                    var btnLeft = document.getElementById('btnPortLeft');
+                    var btnRight = document.getElementById('btnPortRight');
+                    if (btnLeft) btnLeft.addEventListener('click', function() {
+                        track.scrollLeft -= 370;
+                    });
+                    if (btnRight) btnRight.addEventListener('click', function() {
+                        track.scrollLeft += 370;
+                    });
+                })();
+                </script>
+            </div>
+        </section>
+
+        <!-- Resume Section -->
+        <section class="section" id="resume" style="border-bottom: 1px solid var(--color-outline);">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 80px;">
+                    <span class="text-label-caps text-primary">Qualifications</span>
+                    <h2 class="text-headline-lg" style="margin-top: 8px;">My Resume</h2>
+                </div>
+
+                <div class="grid grid-cols-2 lg-grid-cols-1" style="gap: 48px;">
+                    <!-- Job Experience -->
+                    <div>
+                        <h3 class="text-secondary text-headline-lg" style="font-size: 24px; margin-bottom: 40px; border-left: 4px solid var(--color-primary-container); padding-left: 16px;">Job Experience</h3>
+                        
+                        <div class="timeline-container">
+                            <div class="timeline-item glass-card p-8">
+                                <div class="flex justify-between items-start" style="margin-bottom: 16px; flex-wrap: wrap; gap: 8px;">
+                                    <div>
+                                        <h4 class="text-secondary" style="font-size: 20px; font-weight: 600;">Senior SEO Specialist</h4>
+                                        <p class="text-muted" style="font-size: 14px;">Global Agency (2018 - Present)</p>
+                                    </div>
+                                    <span class="chip" style="color: var(--color-primary-container);">4.8/5 Rated</span>
+                                </div>
+                                <p class="text-muted">Directing enterprise-tier international SEO operations across 80+ countries utilizing advanced search graphs and crawl algorithms.</p>
+                            </div>
+
+                            <div class="timeline-item glass-card p-8">
+                                <div class="flex justify-between items-start" style="margin-bottom: 16px; flex-wrap: wrap; gap: 8px;">
+                                    <div>
+                                        <h4 class="text-secondary" style="font-size: 20px; font-weight: 600;">Digital Marketer</h4>
+                                        <p class="text-muted" style="font-size: 14px;">Tech Startup (2015 - 2018)</p>
+                                    </div>
+                                    <span class="chip" style="color: var(--color-primary-container);">4.9/5 Rated</span>
+                                </div>
+                                <p class="text-muted">Executed early-stage organic user acquisition strategies, semantic optimization pipelines, and traffic scale architectures.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education Quality -->
+                    <div>
+                        <h3 class="text-secondary text-headline-lg" style="font-size: 24px; margin-bottom: 40px; border-left: 4px solid var(--color-primary-container); padding-left: 16px;">Education & Certifications</h3>
+                        
+                        <div class="timeline-container">
+                            <div class="timeline-item glass-card p-8">
+                                <div class="flex justify-between items-start" style="margin-bottom: 16px; flex-wrap: wrap; gap: 8px;">
+                                    <div>
+                                        <h4 class="text-secondary" style="font-size: 20px; font-weight: 600;">Masters in IT</h4>
+                                        <p class="text-muted" style="font-size: 14px;">University of Dhaka (2012 - 2014)</p>
+                                    </div>
+                                    <span class="chip" style="color: var(--color-primary-container);">First Class</span>
+                                </div>
+                                <p class="text-muted">Focused on information systems, web search technologies, semantic retrieval, and complex data models.</p>
+                            </div>
+
+                            <div class="timeline-item glass-card p-8">
+                                <div class="flex justify-between items-start" style="margin-bottom: 16px; flex-wrap: wrap; gap: 8px;">
+                                    <div>
+                                        <h4 class="text-secondary" style="font-size: 20px; font-weight: 600;">Google Search Central Certifications</h4>
+                                        <p class="text-muted" style="font-size: 14px;">Google Inc.</p>
+                                    </div>
+                                    <span class="chip" style="color: var(--color-primary-container);">Platinum</span>
+                                </div>
+                                <p class="text-muted">Ongoing platform validations for Core Web Vitals, Structured Data markup, and global search engine policies.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="section" id="pricing" style="border-bottom: 1px solid var(--color-outline); background: rgba(0,0,0,0.1);">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 60px;">
+                    <span class="text-label-caps text-primary">Pricing Tables</span>
+                    <h2 class="text-headline-lg" style="margin-top: 8px;">Select a plan</h2>
+                </div>
+
+                <div class="grid grid-cols-3 lg-grid-cols-1" style="align-items: stretch; gap: 32px;">
+                    <!-- Plan 1 -->
+                    <div class="glass-card p-8 flex flex-col justify-between" style="min-height: 480px;">
+                        <div>
+                            <h3 class="text-secondary" style="font-size: 24px; margin-bottom: 12px;">Core SEO</h3>
+                            <p class="text-muted" style="margin-bottom: 24px;">Essential Organic Search Setup</p>
+                            <div class="flex items-baseline" style="margin-bottom: 32px;">
+                                <span class="text-headline-lg text-primary" style="font-size: 48px; font-weight: 700;">$49.00</span>
+                                <span class="text-muted" style="margin-left: 8px;">/mo</span>
+                            </div>
+                            <ul style="list-style: none; display: flex; flex-direction: column; gap: 16px; border-top: 1px solid var(--color-outline); padding-top: 24px;">
+                                <li class="flex items-center" style="gap: 12px; color: var(--color-secondary);"><span class="material-symbols-outlined text-primary">check</span> Basic SEO Audit</li>
+                                <li class="flex items-center" style="gap: 12px; color: var(--color-secondary);"><span class="material-symbols-outlined text-primary">check</span> Keyword Tracking</li>
+                                <li class="flex items-center" style="gap: 12px; color: var(--color-secondary);"><span class="material-symbols-outlined text-primary">check</span> On-Page Tagging</li>
+                            </ul>
+                        </div>
+                        <a href="#contact" class="btn btn-outline w-full" style="margin-top: 40px;">Order Now</a>
+                    </div>
+
+                    <!-- Plan 2 -->
+                    <div class="glass-card p-8 flex flex-col justify-between" style="min-height: 480px; border-color: var(--color-primary-container); transform: scale(1.03); box-shadow: 0 10px 30px rgba(255,81,106,0.15); z-index: 5;">
+                        <div style="position: absolute; top: 20px; right: 20px;" class="chip">POPULAR</div>
+                        <div>
+                            <h3 class="text-secondary" style="font-size: 24px; margin-bottom: 12px;">AI-Driven SEO</h3>
+                            <p class="text-muted" style="margin-bottom: 24px;">Growth Acceleration Moat</p>
+                            <div class="flex items-baseline" style="margin-bottom: 32px;">
+                                <span class="text-headline-lg text-primary" style="font-size: 48px; font-weight: 700;">$99.00</span>
+                                <span class="text-muted" style="margin-left: 8px;">/mo</span>
+                            </div>
+                            <ul style="list-style: none; display: flex; flex-direction: column; gap: 16px; border-top: 1px solid var(--color-outline); padding-top: 24px;">
+                                <li class="flex items-center" style="gap: 12px; color: var(--color-secondary);"><span class="material-symbols-outlined text-primary">check</span> AI Overview (SGE) Visibility</li>
+                                <li class="flex items-center" style="gap: 12px; color: var(--color-secondary);"><span class="material-symbols-outlined text-primary">check</span> Semantic Topical Mapping</li>
+                                <li class="flex items-center" style="gap: 12px; color: var(--color-secondary);"><span class="material-symbols-outlined text-primary">check</span> Entity Authority Graph Moat</li>
+                                <li class="flex items-center" style="gap: 12px; color: var(--color-secondary);"><span class="material-symbols-outlined text-primary">check</span> 24/7 Priority Support</li>
+                            </ul>
+                        </div>
+                        <a href="#contact" class="btn btn-primary w-full" style="margin-top: 40px;">Order Now</a>
+                    </div>
+
+                    <!-- Plan 3 -->
+                    <div class="glass-card p-8 flex flex-col justify-between" style="min-height: 480px;">
+                        <div>
+                            <h3 class="text-secondary" style="font-size: 24px; margin-bottom: 12px;">Enterprise</h3>
+                            <p class="text-muted" style="margin-bottom: 24px;">Global Search Authority</p>
+                            <div class="flex items-baseline" style="margin-bottom: 32px;">
+                                <span class="text-headline-lg text-primary" style="font-size: 48px; font-weight: 700;">$199.00</span>
+                                <span class="text-muted" style="margin-left: 8px;">/mo</span>
+                            </div>
+                            <ul style="list-style: none; display: flex; flex-direction: column; gap: 16px; border-top: 1px solid var(--color-outline); padding-top: 24px;">
+                                <li class="flex items-center" style="gap: 12px; color: var(--color-secondary);"><span class="material-symbols-outlined text-primary">check</span> Global Link PR Outreach</li>
+                                <li class="flex items-center" style="gap: 12px; color: var(--color-secondary);"><span class="material-symbols-outlined text-primary">check</span> Multi-Region Indexing</li>
+                                <li class="flex items-center" style="gap: 12px; color: var(--color-secondary);"><span class="material-symbols-outlined text-primary">check</span> Dedicated Strategy Director</li>
+                            </ul>
+                        </div>
+                        <a href="#contact" class="btn btn-outline w-full" style="margin-top: 40px;">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section class="section" id="blog" style="border-bottom: 1px solid var(--color-outline);">
+            <div class="container">
+                <div style="margin-bottom: 40px; display:flex; justify-content:space-between; align-items:flex-end;">
+                    <div>
+                        <span class="text-label-caps text-primary">Latest Insights</span>
+                        <h2 class="text-headline-lg" style="margin-top: 8px;">Latest News</h2>
+                    </div>
+                    <div style="display:flex; gap:12px;">
+                        <button id="btnBlogLeft" style="width:44px;height:44px;border-radius:50%;border:1px solid var(--color-outline);background:rgba(255,255,255,0.05);color:var(--color-secondary);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.3s ease;" onmouseover="this.style.borderColor='#ff0026';this.style.color='#ff0026';" onmouseout="this.style.borderColor='var(--color-outline)';this.style.color='var(--color-secondary)';">
+                            <span class="material-symbols-outlined">arrow_back</span>
+                        </button>
+                        <button id="btnBlogRight" style="width:44px;height:44px;border-radius:50%;border:1px solid var(--color-outline);background:rgba(255,255,255,0.05);color:var(--color-secondary);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.3s ease;" onmouseover="this.style.borderColor='#ff0026';this.style.color='#ff0026';" onmouseout="this.style.borderColor='var(--color-outline)';this.style.color='var(--color-secondary)';">
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div style="padding-top: 8px;">
+                <div id="blogScrollTrack" style="display:flex; gap:24px; overflow-x:auto; scroll-behavior:smooth; padding:8px 4px 16px 4px; scrollbar-width:none; -ms-overflow-style:none; cursor:grab;">
+                <style>#blogScrollTrack::-webkit-scrollbar{display:none;}</style>
+                    <div class="glass-card card-inner p-6" id="blogEmptyState" style="min-width:340px; max-width:340px; flex-shrink:0;">
+                        <p class="text-muted" style="font-size: 14px; line-height:1.75; margin:0;">Loading posts from the <code>posts/</code> folder. To show blog posts here, add a post file and list it in <code>posts/posts.json</code>.</p>
+                    </div>
+
+                    <!-- Article 2 -->
+
+                    <!-- Article 3 -->
+
+                    <!-- Article 4 -->
+
+                    <!-- Article 5 -->
+
+                    <!-- Article 6 -->
+
+                    <!-- Article 7 -->
+
+                    <!-- Article 8 -->
+
+                    <!-- Article 9 -->
+
+                    <!-- Article 10 -->
+
+                    <!-- Article 11 -->
+
+                    <!-- Article 12 -->
+
+                    <!-- Article 13 -->
+
+                    <!-- Article 14 -->
+
+                    <!-- Article 15 -->
+
+                    <!-- Article 16 -->
+
+                    <!-- Article 17 -->
+
+                    <!-- Article 18 -->
+
+                    <!-- Article 19 -->
+
+                    <!-- Article 20 -->
+                    
+                </div><!-- end blogScrollTrack -->
+                </div><!-- end padding wrapper -->
+            </div>
+
+            <script>
+            (function(){
+                var track = document.getElementById('blogScrollTrack');
+                if (!track) return;
+                var isDown = false, startX, startScrollLeft;
+                track.addEventListener('mousedown', function(e) {
+                    isDown = true;
+                    track.style.cursor = 'grabbing';
+                    startX = e.pageX;
+                    startScrollLeft = track.scrollLeft;
+                    e.preventDefault();
+                });
+                document.addEventListener('mouseup', function() {
+                    if (!isDown) return;
+                    isDown = false;
+                    track.style.cursor = 'grab';
+                });
+                document.addEventListener('mousemove', function(e) {
+                    if (!isDown) return;
+                    track.scrollLeft = startScrollLeft - (e.pageX - startX);
+                });
+                var btnLeft = document.getElementById('btnBlogLeft');
+                var btnRight = document.getElementById('btnBlogRight');
+                if (btnLeft) btnLeft.addEventListener('click', function() { track.scrollLeft -= 370; });
+                if (btnRight) btnRight.addEventListener('click', function() { track.scrollLeft += 370; });
+            })();
+            </script>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section" id="contact" style="background: rgba(0,0,0,0.15);">
+            <style>
+                @keyframes dropdownOpen {
+                    from { opacity: 0; transform: translateY(-8px) scaleY(0.96); }
+                    to { opacity: 1; transform: translateY(0) scaleY(1); }
+                }
+                #servicesDropdown, #planDropdown {
+                    transform-origin: top;
+                }
+                #servicesDropdown.dd-open, #planDropdown.dd-open {
+                    animation: dropdownOpen 0.22s ease-out;
+                }
+                .msdd-box {
+                    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+                }
+                .msdd-box:hover {
+                    border-color: var(--color-primary-container);
+                    transform: translateY(-2px);
+                }
+                .msdd-box .material-symbols-outlined {
+                    transition: transform 0.3s ease;
+                }
+                .msdd-box.dd-active .material-symbols-outlined {
+                    transform: rotate(180deg);
+                }
+                #servicesDropdown label, #planDropdown label {
+                    transition: background 0.2s ease, transform 0.15s ease;
+                }
+                #servicesDropdown label:hover, #planDropdown label:hover {
+                    transform: translateX(4px);
+                }
+                #agencyContactForm .form-group {
+                    opacity: 0;
+                    transform: translateY(16px);
+                    animation: fadeSlideUp 0.5s ease forwards;
+                }
+                @keyframes fadeSlideUp {
+                    to { opacity: 1; transform: translateY(0); }
+                }
+                #agencyContactForm .form-group:nth-child(1) { animation-delay: 0.05s; }
+                #agencyContactForm .form-group:nth-child(2) { animation-delay: 0.1s; }
+                #agencyContactForm .form-group:nth-child(3) { animation-delay: 0.15s; }
+                #agencyContactForm .form-group:nth-child(4) { animation-delay: 0.2s; }
+                #agencyContactForm .form-group:nth-child(5) { animation-delay: 0.25s; }
+                #agencyContactForm .form-group:nth-child(6) { animation-delay: 0.3s; }
+                #agencyContactForm .btn-primary {
+                    position: relative;
+                    overflow: hidden;
+                    transition: transform 0.25s ease, box-shadow 0.25s ease;
+                }
+                #agencyContactForm .btn-primary:hover {
+                    transform: translateY(-3px) scale(1.01);
+                    box-shadow: 0 8px 30px rgba(255, 0, 38, 0.35);
+                }
+                #agencyContactForm .btn-primary::after {
+                    content: '';
+                    position: absolute;
+                    top: 0; left: -75%;
+                    width: 50%; height: 100%;
+                    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.25), transparent);
+                    transform: skewX(-25deg);
+                    transition: left 0.6s ease;
+                }
+                #agencyContactForm .btn-primary:hover::after {
+                    left: 125%;
+                }
+                input:focus, select:focus, textarea:focus {
+                    transform: translateY(-1px);
+                }
+            </style>
+            <div class="container" style="max-width: 1100px;">
+                <div class="glass-card p-8 rounded-3xl shadow-2xl">
+                    <div class="text-center" style="margin-bottom: 40px; position: relative;">
+                        <h2 class="text-secondary text-headline-lg" style="font-size: 32px; margin-bottom: 12px;">Interested in Our Services?</h2>
+                        <p class="text-muted">Submit your search parameters to configure a strategic outreach campaign with our team.</p>
+                        <canvas id="contactMascot" width="120" height="120" style="position:absolute; right:0; top:-30px; pointer-events:none;"></canvas>
+                    </div>
+
+                    <form id="agencyContactForm" class="grid grid-cols-2 md-grid-cols-1" style="gap: 20px;">
+                        <div class="form-group span-6">
+                            <label>Name *</label>
+                            <input type="text" placeholder="Enter Name" required/>
+                        </div>
+                        <div class="form-group span-6">
+                            <label>Email *</label>
+                            <input type="email" placeholder="Enter Email" required/>
+                        </div>
+                        <div class="form-group span-12">
+                            <label>WhatsApp Number *</label>
+                            <input type="tel" placeholder="Enter WhatsApp Number" required/>
+                        </div>
+
+                        <div class="form-group span-12" id="planFormGroup" style="position: relative;">
+                            <div class="msdd-box" id="planBox" tabindex="0" style="background: var(--bg-secondary); border: 1px solid var(--color-outline-variant); border-radius: var(--radius-lg); padding: 14px 18px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 8px;">
+                                <span id="planSelectedText" style="color: var(--color-text-muted);">Select a Plan</span>
+                                <span class="material-symbols-outlined" style="font-size: 20px; color: var(--color-text-muted);">expand_more</span>
+                            </div>
+                            <div id="planDropdown" class="card-inner" style="display:none; position:absolute; top:100%; left:0; right:0; margin-top:6px; padding:10px; border-radius: var(--radius-lg); z-index: 100; background: #161616;">
+                                <label class="flex items-center" style="gap: 10px; padding: 10px 12px; cursor: pointer; font-size: var(--fs-body-md); font-weight: 400; color: var(--color-secondary); border-radius: 8px;">
+                                    <input type="radio" class="plan-radio" name="plan" value="Core SEO" style="width: auto; accent-color: var(--color-primary);"/>
+                                    Core SEO
+                                </label>
+                                <label class="flex items-center" style="gap: 10px; padding: 10px 12px; cursor: pointer; font-size: var(--fs-body-md); font-weight: 400; color: var(--color-secondary); border-radius: 8px;">
+                                    <input type="radio" class="plan-radio" name="plan" value="AI-Driven SEO" style="width: auto; accent-color: var(--color-primary);"/>
+                                    AI-Driven SEO
+                                </label>
+                                <label class="flex items-center" style="gap: 10px; padding: 10px 12px; cursor: pointer; font-size: var(--fs-body-md); font-weight: 400; color: var(--color-secondary); border-radius: 8px;">
+                                    <input type="radio" class="plan-radio" name="plan" value="Enterprise" style="width: auto; accent-color: var(--color-primary);"/>
+                                    Enterprise
+                                </label>
+                            </div>
+                        </div>
+
+                        <script>
+                        (function(){
+                            const box = document.getElementById('planBox');
+                            const dropdown = document.getElementById('planDropdown');
+                            const text = document.getElementById('planSelectedText');
+                            const radios = dropdown.querySelectorAll('.plan-radio');
+
+                            box.addEventListener('click', function(){
+                                const opening = dropdown.style.display === 'none' || dropdown.style.display === '';
+                                if(opening){
+                                    dropdown.style.display = 'block';
+                                    dropdown.classList.add('dd-open');
+                                    box.classList.add('dd-active');
+                                    document.getElementById('planFormGroup').style.zIndex = '50';
+                                } else {
+                                    dropdown.style.display = 'none';
+                                    dropdown.classList.remove('dd-open');
+                                    box.classList.remove('dd-active');
+                                    document.getElementById('planFormGroup').style.zIndex = '';
+                                }
+                            });
+
+                            document.addEventListener('click', function(e){
+                                if(!box.contains(e.target) && !dropdown.contains(e.target)){
+                                    dropdown.style.display = 'none';
+                                    dropdown.classList.remove('dd-open');
+                                    box.classList.remove('dd-active');
+                                    document.getElementById('planFormGroup').style.zIndex = '';
+                                }
+                            });
+
+                            radios.forEach(r => {
+                                r.addEventListener('change', function(){
+                                    text.textContent = this.value;
+                                    text.style.color = 'var(--color-secondary)';
+                                    dropdown.style.display = 'none';
+                                    dropdown.classList.remove('dd-open');
+                                    box.classList.remove('dd-active');
+                                    document.getElementById('planFormGroup').style.zIndex = '';
+                                });
+                                r.closest('label').addEventListener('mouseenter', function(){ this.style.background = 'var(--bg-surface-hover)'; });
+                                r.closest('label').addEventListener('mouseleave', function(){ this.style.background = 'transparent'; });
+                            });
+                        })();
+                        </script>
+
+                        <div class="form-group span-12" id="servicesFormGroup" style="position: relative;">
+                            <div class="msdd-box" id="servicesBox" tabindex="0" style="background: var(--bg-secondary); border: 1px solid var(--color-outline-variant); border-radius: var(--radius-lg); padding: 14px 18px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 8px;">
+                                <span id="servicesSelectedText" style="color: var(--color-text-muted);">Select Services ( Optional )</span>
+                                <span class="material-symbols-outlined" style="font-size: 20px; color: var(--color-text-muted);">expand_more</span>
+                            </div>
+                            <div id="servicesDropdown" class="card-inner" style="display:none; position:absolute; top:100%; left:0; right:0; margin-top:6px; padding:10px; border-radius: var(--radius-lg); z-index: 100; background: #161616; max-height: 240px; overflow-y: auto;">
+                                <label class="flex items-center" style="gap: 10px; padding: 10px 12px; cursor: pointer; font-size: var(--fs-body-md); font-weight: 400; color: var(--color-secondary); border-radius: 8px;">
+                                    <input type="checkbox" class="service-checkbox" name="services" value="SEO Audit" style="width: auto; accent-color: var(--color-primary);"/>
+                                    SEO Audit
+                                </label>
+                                <label class="flex items-center" style="gap: 10px; padding: 10px 12px; cursor: pointer; font-size: var(--fs-body-md); font-weight: 400; color: var(--color-secondary); border-radius: 8px;">
+                                    <input type="checkbox" class="service-checkbox" name="services" value="Content Strategy" style="width: auto; accent-color: var(--color-primary);"/>
+                                    Content Strategy
+                                </label>
+                                <label class="flex items-center" style="gap: 10px; padding: 10px 12px; cursor: pointer; font-size: var(--fs-body-md); font-weight: 400; color: var(--color-secondary); border-radius: 8px;">
+                                    <input type="checkbox" class="service-checkbox" name="services" value="Link Building" style="width: auto; accent-color: var(--color-primary);"/>
+                                    Link Building
+                                </label>
+                                <label class="flex items-center" style="gap: 10px; padding: 10px 12px; cursor: pointer; font-size: var(--fs-body-md); font-weight: 400; color: var(--color-secondary); border-radius: 8px;">
+                                    <input type="checkbox" class="service-checkbox" name="services" value="Technical SEO Fixes" style="width: auto; accent-color: var(--color-primary);"/>
+                                    Technical SEO Fixes
+                                </label>
+                                <label class="flex items-center" style="gap: 10px; padding: 10px 12px; cursor: pointer; font-size: var(--fs-body-md); font-weight: 400; color: var(--color-secondary); border-radius: 8px;">
+                                    <input type="checkbox" class="service-checkbox" name="services" value="Speed Optimization" style="width: auto; accent-color: var(--color-primary);"/>
+                                    Speed Optimization
+                                </label>
+                                <label class="flex items-center" style="gap: 10px; padding: 10px 12px; cursor: pointer; font-size: var(--fs-body-md); font-weight: 400; color: var(--color-secondary); border-radius: 8px;">
+                                    <input type="checkbox" class="service-checkbox" name="services" value="Schema Markup" style="width: auto; accent-color: var(--color-primary);"/>
+                                    Schema Markup
+                                </label>
+                                <label class="flex items-center" style="gap: 10px; padding: 10px 12px; cursor: pointer; font-size: var(--fs-body-md); font-weight: 400; color: var(--color-secondary); border-radius: 8px;">
+                                    <input type="checkbox" class="service-checkbox" name="services" value="Keyword Research" style="width: auto; accent-color: var(--color-primary);"/>
+                                    Keyword Research
+                                </label>
+                                <label class="flex items-center" style="gap: 10px; padding: 10px 12px; cursor: pointer; font-size: var(--fs-body-md); font-weight: 400; color: var(--color-secondary); border-radius: 8px;">
+                                    <input type="checkbox" class="service-checkbox" name="services" value="Social Media Marketing" style="width: auto; accent-color: var(--color-primary);"/>
+                                    Social Media Marketing
+                                </label>
+                                <label class="flex items-center" style="gap: 10px; padding: 10px 12px; cursor: pointer; font-size: var(--fs-body-md); font-weight: 400; color: var(--color-secondary); border-radius: 8px;">
+                                    <input type="checkbox" class="service-checkbox" name="services" value="Conversion Rate Optimization" style="width: auto; accent-color: var(--color-primary);"/>
+                                    Conversion Rate Optimization
+                                </label>
+                            </div>
+                        </div>
+
+                        <script>
+                        (function(){
+                            const box = document.getElementById('servicesBox');
+                            const dropdown = document.getElementById('servicesDropdown');
+                            const text = document.getElementById('servicesSelectedText');
+                            const checkboxes = dropdown.querySelectorAll('.service-checkbox');
+
+                            box.addEventListener('click', function(){
+                                const opening = dropdown.style.display === 'none' || dropdown.style.display === '';
+                                if(opening){
+                                    dropdown.style.display = 'block';
+                                    dropdown.classList.add('dd-open');
+                                    box.classList.add('dd-active');
+                                    document.getElementById('servicesFormGroup').style.zIndex = '50';
+                                } else {
+                                    dropdown.style.display = 'none';
+                                    dropdown.classList.remove('dd-open');
+                                    box.classList.remove('dd-active');
+                                    document.getElementById('servicesFormGroup').style.zIndex = '';
+                                }
+                            });
+
+                            document.addEventListener('click', function(e){
+                                if(!box.contains(e.target) && !dropdown.contains(e.target)){
+                                    dropdown.style.display = 'none';
+                                    dropdown.classList.remove('dd-open');
+                                    box.classList.remove('dd-active');
+                                    document.getElementById('servicesFormGroup').style.zIndex = '';
+                                }
+                            });
+
+                            checkboxes.forEach(cb => {
+                                cb.addEventListener('change', updateText);
+                                cb.closest('label').addEventListener('mouseenter', function(){ this.style.background = 'var(--bg-surface-hover)'; });
+                                cb.closest('label').addEventListener('mouseleave', function(){ this.style.background = 'transparent'; });
+                            });
+
+                            function updateText(){
+                                const selected = Array.from(checkboxes).filter(c => c.checked).map(c => c.value);
+                                if(selected.length === 0){
+                                    text.textContent = 'Select Services ( Optional )';
+                                    text.style.color = 'var(--color-text-muted)';
+                                } else {
+                                    text.textContent = selected.join(', ');
+                                    text.style.color = 'var(--color-secondary)';
+                                }
+                            }
+                        })();
+                        </script>
+
+                        <div class="form-group span-12">
+                            <label>Custom Message</label>
+                            <textarea placeholder="Write your message ..." rows="4"></textarea>
+                        </div>
+
+                        <button class="btn btn-primary span-12" type="submit" style="padding: 16px; margin-top: 16px;">Send Your Message</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Mascot Animation: pencil writing + speech bubble -->
+            <script>
+            (function(){
+                const canvas = document.getElementById('contactMascot');
+                if(!canvas) return;
+                const ctx = canvas.getContext('2d');
+                let frame = 0;
+
+                function drawPencil(){
+                    ctx.save();
+                    const bob = Math.sin(frame * 0.08) * 4;
+                    const wiggle = Math.sin(frame * 0.25) * 6;
+                    ctx.translate(60, 55 + bob);
+                    ctx.rotate((45 + wiggle) * Math.PI/180);
+
+                    // Pencil body
+                    ctx.fillStyle = '#ff0026';
+                    ctx.fillRect(-6, -30, 12, 40);
+                    // Pencil tip
+                    ctx.beginPath();
+                    ctx.moveTo(-6, 10);
+                    ctx.lineTo(6, 10);
+                    ctx.lineTo(0, 24);
+                    ctx.closePath();
+                    ctx.fillStyle = '#e0c19a';
+                    ctx.fill();
+                    ctx.beginPath();
+                    ctx.moveTo(-2, 18);
+                    ctx.lineTo(2, 18);
+                    ctx.lineTo(0, 24);
+                    ctx.closePath();
+                    ctx.fillStyle = '#2a2a2a';
+                    ctx.fill();
+                    // Eraser
+                    ctx.fillStyle = '#ffffff';
+                    ctx.fillRect(-6, -38, 12, 8);
+                    ctx.restore();
+                }
+
+                function drawBubble(){
+                    const alpha = 0.6 + Math.sin(frame * 0.06) * 0.4;
+                    ctx.save();
+                    ctx.globalAlpha = Math.max(0.15, alpha);
+                    const bx = 60, by = 14;
+                    ctx.font = 'bold 11px Rubik, sans-serif';
+                    const text = 'Fill me out!';
+                    const tw = ctx.measureText(text).width;
+                    const pad = 8, bw = tw + pad*2, bh = 22;
+                    ctx.fillStyle = 'rgba(20,20,20,0.85)';
+                    ctx.strokeStyle = '#ff0026';
+                    ctx.lineWidth = 1.2;
+                    ctx.beginPath();
+                    ctx.roundRect(bx - bw/2, by - bh/2, bw, bh, 6);
+                    ctx.fill(); ctx.stroke();
+                    // tail
+                    ctx.beginPath();
+                    ctx.moveTo(bx - 5, by + bh/2);
+                    ctx.lineTo(bx, by + bh/2 + 7);
+                    ctx.lineTo(bx + 5, by + bh/2);
+                    ctx.fillStyle = 'rgba(20,20,20,0.85)';
+                    ctx.fill();
+                    ctx.strokeStyle = '#ff0026';
+                    ctx.stroke();
+                    // text
+                    ctx.fillStyle = '#ff6680';
+                    ctx.textAlign = 'center';
+                    ctx.fillText(text, bx, by + 4);
+                    ctx.restore();
+                }
+
+                function loop(){
+                    frame++;
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    drawPencil();
+                    drawBubble();
+                    requestAnimationFrame(loop);
+                }
+                loop();
+            })();
+            </script>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container grid grid-cols-12 lg-grid-cols-12-fluid" style="gap: 48px; margin-bottom: 60px;">
+            <div class="span-4">
+                <div class="footer-logo">MAHFUZ<span class="text-primary">.</span></div>
+                <p class="text-muted" style="margin-bottom: 24px;">Revolutionizing the digital landscape through data-driven search strategies and AI-integrated marketing.</p>
+                <div class="flex" style="gap: 12px;">
+                    <a class="card-inner flex items-center justify-center" style="width: 44px; height: 44px; text-decoration: none;" href="#" aria-label="Facebook">
+                        <span class="material-symbols-outlined text-secondary" style="font-size: 20px;">public</span>
+                    </a>
+                    <a class="card-inner flex items-center justify-center" style="width: 44px; height: 44px; text-decoration: none;" href="#" aria-label="LinkedIn">
+                        <span class="material-symbols-outlined text-secondary" style="font-size: 20px;">share</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="span-3">
+                <h4 class="text-secondary text-label-caps" style="margin-bottom: 24px;">Quick Links</h4>
+                <div class="footer-links-group">
+                    <a href="#hero">About Me</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#services">SEO Services</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+
+            <div class="span-3">
+                <h4 class="text-secondary text-label-caps" style="margin-bottom: 24px;">Resources</h4>
+                <div class="footer-links-group">
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#case-studies">Case Studies</a>
+                    <a href="#blog">SEO Blog</a>
+                </div>
+            </div>
+
+            <div class="span-2">
+                <h4 class="text-secondary text-label-caps" style="margin-bottom: 24px;">Stay Updated</h4>
+                <p class="text-muted" style="font-size: 14px; margin-bottom: 16px;">Get the latest SEO insights delivered monthly.</p>
+                <form id="newsletterForm" style="display: flex; gap: 0;">
+                    <input type="email" placeholder="Email Address" required style="border-top-right-radius: 0; border-bottom-right-radius: 0; padding: 10px 14px; font-size: 14px;"/>
+                    <button type="submit" class="btn btn-primary" style="border-top-left-radius: 0; border-bottom-left-radius: 0; padding: 0 16px;">
+                        <span class="material-symbols-outlined" style="font-size: 20px;">send</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="container text-center" style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 32px;">
+            <p class="text-muted" style="font-size: 14px;">
+                © 2024 Mahfuz BD Asia. | <span class="text-secondary">Best SEO Expert in Bangladesh.</span> | All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Main scripts -->
+    <script src="js/main.js"></script>
+
+    <!-- Hero Fish + Crab + Fishing Rod Effect -->
+    <script>
+    (function(){
+        const canvas = document.getElementById('heroParticles');
+        if(!canvas) return;
+        const ctx = canvas.getContext('2d');
+        let W, H, mouse = {x:-999, y:-999};
+
+        function resize(){
+            const rect = canvas.parentElement.getBoundingClientRect();
+            W = canvas.width = rect.width;
+            H = canvas.height = rect.height;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        const heroSection = document.getElementById('hero');
+        heroSection.addEventListener('mousemove', function(e){
+            const rect = heroSection.getBoundingClientRect();
+            mouse.x = e.clientX - rect.left;
+            mouse.y = e.clientY - rect.top;
+        });
+        heroSection.addEventListener('mouseleave', function(){ mouse.x=-999; mouse.y=-999; });
+
+        /* ========== HELPERS ========== */
+        function drawFish(cx, cy, vx, vy, s, colors, tailPhase, alpha){
+            alpha = alpha===undefined?1:alpha;
+            const angle = Math.atan2(vy, vx);
+            const tailWag = Math.sin(tailPhase)*0.45;
+            ctx.save();
+            ctx.globalAlpha = alpha;
+            ctx.translate(cx, cy);
+            ctx.rotate(angle);
+            // tail
+            ctx.save(); ctx.rotate(tailWag);
+            ctx.beginPath();
+            ctx.moveTo(-s*0.9,0); ctx.lineTo(-s*1.9,-s*0.6); ctx.lineTo(-s*1.9,s*0.6);
+            ctx.closePath(); ctx.fillStyle=colors.tail; ctx.fill();
+            ctx.restore();
+            // body
+            ctx.beginPath(); ctx.ellipse(0,0,s,s*0.45,0,0,Math.PI*2);
+            ctx.fillStyle=colors.body; ctx.fill();
+            // dorsal fin
+            ctx.beginPath(); ctx.moveTo(-s*0.1,-s*0.45);
+            ctx.quadraticCurveTo(s*0.2,-s*0.9,s*0.5,-s*0.4);
+            ctx.lineTo(-s*0.1,-s*0.45); ctx.fillStyle=colors.fin; ctx.fill();
+            // eye
+            ctx.beginPath(); ctx.arc(s*0.55,-s*0.1,s*0.12,0,Math.PI*2);
+            ctx.fillStyle='rgba(255,255,255,0.9)'; ctx.fill();
+            ctx.beginPath(); ctx.arc(s*0.57,-s*0.1,s*0.07,0,Math.PI*2);
+            ctx.fillStyle='#111'; ctx.fill();
+            ctx.restore();
+        }
+
+        /* ========== FISH CLASS ========== */
+        const PALETTES = [
+            {body:'rgba(220,0,30,0.75)',  fin:'rgba(255,60,80,0.5)',   tail:'rgba(180,0,20,0.6)'},
+            {body:'rgba(255,30,55,0.7)',  fin:'rgba(255,100,110,0.45)',tail:'rgba(200,10,30,0.55)'},
+            {body:'rgba(255,80,90,0.65)', fin:'rgba(255,140,150,0.4)', tail:'rgba(220,40,55,0.5)'},
+            {body:'rgba(200,200,220,0.5)',fin:'rgba(255,255,255,0.3)', tail:'rgba(180,180,200,0.4)'},
+        ];
+        function Fish(i){ this.index=i; this.caught=false; this.alpha=1; this.reset(); }
+        Fish.prototype.reset = function(){
+            this.x=Math.random()*W; this.y=Math.random()*H;
+            const a=Math.random()*Math.PI*2, sp=Math.random()*0.8+0.4;
+            this.vx=Math.cos(a)*sp; this.vy=Math.sin(a)*sp;
+            this.size=Math.random()*7+5;
+            this.tailPhase=Math.random()*Math.PI*2;
+            this.tailSpeed=Math.random()*0.08+0.05;
+            this.colors=PALETTES[Math.floor(Math.random()*PALETTES.length)];
+            this.caught=false; this.alpha=1;
+        };
+        Fish.prototype.update = function(){
+            if(this.caught) return;
+            const dx=mouse.x-this.x, dy=mouse.y-this.y;
+            const dist=Math.sqrt(dx*dx+dy*dy);
+            if(dist<80&&dist>0){ this.vx-=(dx/dist)*0.18; this.vy-=(dy/dist)*0.18; }
+            else if(dist<220&&dist>0){ this.vx+=(dx/dist)*0.012; this.vy+=(dy/dist)*0.012; }
+            this.vx+=(Math.random()-0.5)*0.04; this.vy+=(Math.random()-0.5)*0.04;
+            const sp=Math.sqrt(this.vx*this.vx+this.vy*this.vy);
+            if(sp>2.2){this.vx=this.vx/sp*2.2;this.vy=this.vy/sp*2.2;}
+            if(sp<0.3&&sp>0){this.vx=this.vx/sp*0.3;this.vy=this.vy/sp*0.3;}
+            this.x+=this.vx; this.y+=this.vy;
+            this.tailPhase+=this.tailSpeed;
+            const pad=20;
+            if(this.x<-pad)this.x=W+pad; if(this.x>W+pad)this.x=-pad;
+            if(this.y<-pad)this.y=H+pad; if(this.y>H+pad)this.y=-pad;
+        };
+        Fish.prototype.draw = function(){
+            if(this.caught) return;
+            drawFish(this.x,this.y,this.vx,this.vy,this.size,this.colors,this.tailPhase,this.alpha);
+        };
+
+        /* ========== BUBBLE CLASS ========== */
+        function Bubble(){ this.reset(); }
+        Bubble.prototype.reset=function(){
+            this.x=Math.random()*W; this.y=Math.random()*H;
+            this.r=Math.random()*1.5+0.3; this.alpha=Math.random()*0.25+0.04;
+            this.vx=(Math.random()-0.5)*0.4; this.vy=(Math.random()-0.5)*0.4;
+            this.life=Math.random()*300+100; this.age=Math.random()*this.life;
+        };
+        Bubble.prototype.update=function(){
+            this.x+=this.vx;this.y+=this.vy;this.age++;
+            if(this.x<0)this.x=W;if(this.x>W)this.x=0;
+            if(this.y<0)this.y=H;if(this.y>H)this.y=0;
+            if(this.age>this.life)this.reset();
+        };
+        Bubble.prototype.draw=function(){
+            const fade=this.age<20?this.age/20:this.age>this.life-20?(this.life-this.age)/20:1;
+            ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);
+            ctx.fillStyle='rgba(255,0,38,'+(this.alpha*fade)+')';ctx.fill();
+        };
+
+        /* ========== CRAB CLASS ========== */
+        function Crab(){
+            this.phase = 'wait';
+            this.cooldown = 400 + Math.random()*300;
+            this.x = -60; this.y = H - 30;
+            this.vx = 0;
+            this.legPhase = 0;
+            this.targetFish = null;
+            this.caughtFish = null;
+            this.exitTimer = 0;
+            this.size = 18;
+            this.mood = 'normal'; // normal | excited | happy
+            this.moodTimer = 0;
+            this.bubbleText = '';
+            this.bubbleTimer = 0;
+        }
+        Crab.prototype.drawCrab = function(x, y, size, legPhase, mood){
+            const s = size;
+            ctx.save();
+            ctx.translate(x, y);
+
+            // shadow
+            ctx.beginPath(); ctx.ellipse(0, 8, s*1.2, s*0.25, 0, 0, Math.PI*2);
+            ctx.fillStyle='rgba(0,0,0,0.18)'; ctx.fill();
+
+            // legs (4 each side)
+            ctx.strokeStyle='rgba(200,60,0,0.85)'; ctx.lineWidth=2;
+            for(let i=0;i<4;i++){
+                const legWag = Math.sin(legPhase + i*0.8) * 0.3;
+                // left legs
+                ctx.save(); ctx.translate(-s*0.5, s*0.1);
+                ctx.rotate(-0.4 - i*0.18 + legWag);
+                ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(-s*0.9, s*0.4);
+                ctx.stroke();
+                ctx.restore();
+                // right legs
+                ctx.save(); ctx.translate(s*0.5, s*0.1);
+                ctx.rotate(0.4 + i*0.18 - legWag);
+                ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(s*0.9, s*0.4);
+                ctx.stroke();
+                ctx.restore();
+            }
+
+            // body
+            ctx.beginPath(); ctx.ellipse(0, 0, s, s*0.65, 0, 0, Math.PI*2);
+            const cg = ctx.createRadialGradient(-s*0.3,-s*0.2,0,0,0,s);
+            cg.addColorStop(0,'rgba(255,90,20,0.95)');
+            cg.addColorStop(1,'rgba(180,30,0,0.9)');
+            ctx.fillStyle=cg; ctx.fill();
+            ctx.strokeStyle='rgba(255,120,40,0.5)'; ctx.lineWidth=1; ctx.stroke();
+
+            // claws
+            const clawWag = mood==='excited' ? Math.sin(legPhase*3)*0.5 : Math.sin(legPhase)*0.15;
+            // left claw
+            ctx.save(); ctx.translate(-s*1.0, -s*0.1);
+            ctx.rotate(-0.3 + clawWag);
+            ctx.beginPath(); ctx.ellipse(0,0,s*0.5,s*0.35,0,0,Math.PI*2);
+            ctx.fillStyle='rgba(220,60,0,0.9)'; ctx.fill();
+            ctx.restore();
+            // right claw
+            ctx.save(); ctx.translate(s*1.0, -s*0.1);
+            ctx.rotate(0.3 - clawWag);
+            ctx.beginPath(); ctx.ellipse(0,0,s*0.5,s*0.35,0,0,Math.PI*2);
+            ctx.fillStyle='rgba(220,60,0,0.9)'; ctx.fill();
+            ctx.restore();
+
+            // eyes
+            ctx.fillStyle='white';
+            ctx.beginPath(); ctx.arc(-s*0.35,-s*0.5,s*0.18,0,Math.PI*2); ctx.fill();
+            ctx.beginPath(); ctx.arc( s*0.35,-s*0.5,s*0.18,0,Math.PI*2); ctx.fill();
+            ctx.fillStyle='#111';
+            const eyeWag = mood==='happy' ? -0.1 : 0;
+            ctx.beginPath(); ctx.arc(-s*0.35+eyeWag,-s*0.5,s*0.1,0,Math.PI*2); ctx.fill();
+            ctx.beginPath(); ctx.arc( s*0.35+eyeWag,-s*0.5,s*0.1,0,Math.PI*2); ctx.fill();
+
+            // mouth
+            ctx.beginPath();
+            if(mood==='happy'){
+                ctx.arc(0, -s*0.1, s*0.25, 0.1, Math.PI-0.1);
+            } else if(mood==='excited'){
+                ctx.arc(0, -s*0.1, s*0.2, 0.3, Math.PI-0.3);
+            } else {
+                ctx.moveTo(-s*0.2,-s*0.05); ctx.lineTo(s*0.2,-s*0.05);
+            }
+            ctx.strokeStyle='rgba(80,0,0,0.7)'; ctx.lineWidth=1.5; ctx.stroke();
+
+            // speech bubble
+            if(this.bubbleTimer > 0){
+                ctx.save();
+                ctx.font = 'bold 11px sans-serif';
+                const tw = ctx.measureText(this.bubbleText).width;
+                const bx = -tw/2-6, by = -s*1.8-22, bw = tw+12, bh = 20;
+                ctx.fillStyle='rgba(255,255,255,0.92)';
+                ctx.beginPath();
+                ctx.roundRect(bx, by, bw, bh, 5);
+                ctx.fill();
+                ctx.fillStyle='#333';
+                ctx.fillText(this.bubbleText, -tw/2, by+14);
+                ctx.restore();
+            }
+
+            ctx.restore();
+        };
+        Crab.prototype.update = function(fishes){
+            this.legPhase += 0.12;
+            if(this.moodTimer>0) this.moodTimer--;
+            else this.mood='normal';
+            if(this.bubbleTimer>0) this.bubbleTimer--;
+
+            if(this.phase==='wait'){
+                this.cooldown--;
+                if(this.cooldown<=0){ this.start(fishes); }
+                return;
+            }
+            if(this.phase==='enter'){
+                this.vx = 1.2;
+                this.x += this.vx;
+                if(this.x > W*0.15){
+                    this.phase='hunt';
+                    this.mood='excited'; this.moodTimer=60;
+                    this.bubbleText='🐟 got you!'; this.bubbleTimer=80;
+                    this.pickTarget(fishes);
+                }
+            }
+            if(this.phase==='hunt'){
+                if(!this.targetFish || this.targetFish.caught){
+                    this.pickTarget(fishes);
+                }
+                if(this.targetFish){
+                    const dx = this.targetFish.x - this.x;
+                    this.vx += dx>0 ? 0.15 : -0.15;
+                    this.vx *= 0.85;
+                    this.x += this.vx;
+                    // Clamp y to bottom
+                    this.y = H - 30;
+                    const dist = Math.abs(dx);
+                    if(dist < 30){
+                        // CATCH!
+                        this.targetFish.caught = true;
+                        this.caughtFish = this.targetFish;
+                        this.phase = 'celebrate';
+                        this.mood='happy'; this.moodTimer=180;
+                        this.bubbleText='😄 Yummy!'; this.bubbleTimer=120;
+                        this.exitTimer=90;
+                    }
+                }
+            }
+            if(this.phase==='celebrate'){
+                // wiggle in place
+                this.vx = Math.sin(this.legPhase*2)*0.5;
+                this.x += this.vx;
+                this.exitTimer--;
+                if(this.exitTimer<=0){ this.phase='exit'; }
+            }
+            if(this.phase==='exit'){
+                this.vx += 0.12;
+                this.x += this.vx;
+                if(this.x > W+80){
+                    // reset — and RESTORE the eaten fish!
+                    if(this.caughtFish){
+                        this.caughtFish.caught = false;
+                        this.caughtFish.reset();
+                    }
+                    this.phase='wait';
+                    this.cooldown=500+Math.random()*400;
+                    this.x=-60;
+                    this.vx=0;
+                    this.caughtFish=null;
+                    this.targetFish=null;
+                }
+            }
+        };
+        Crab.prototype.start = function(fishes){
+            this.phase='enter';
+            this.x=-60;
+            this.y=H-30;
+            this.vx=0;
+        };
+        Crab.prototype.pickTarget = function(fishes){
+            const available = fishes.filter(f=>!f.caught);
+            if(available.length===0){ this.phase='exit'; return; }
+            // pick closest to bottom
+            available.sort((a,b)=>b.y-a.y);
+            this.targetFish = available[0];
+        };
+        Crab.prototype.draw = function(){
+            if(this.phase==='wait') return;
+            // Draw caught fish dangling from claw
+            if(this.caughtFish){
+                const f = this.caughtFish;
+                f.x = this.x - this.size*1.2;
+                f.y = this.y - this.size*0.8;
+                drawFish(f.x, f.y, -1, 0.3, f.size, f.colors, f.tailPhase+=0.08, 0.9);
+            }
+            this.drawCrab(this.x, this.y, this.size, this.legPhase, this.mood);
+        };
+
+        /* ========== FISHING ROD ========== */
+        function FishingRod(){
+            this.phase = 'wait'; // wait | lower | waiting | nibble | pull | exit
+            this.cooldown = 600 + Math.random()*400;
+            this.rodX = 0;
+            this.lineY = 0;      // how far line has descended (0=top)
+            this.hookY = 0;
+            this.targetLineY = 0;
+            this.hookFish = null;
+            this.nibbleTimer = 0;
+            this.nibbleCount = 0;
+            this.pullSpeed = 0;
+            this.baitWag = 0;
+            this.caught = false;
+            this.exitY = 0;
+        }
+        FishingRod.prototype.update = function(fishes){
+            this.baitWag += 0.05;
+
+            if(this.phase==='wait'){
+                this.cooldown--;
+                if(this.cooldown<=0){ this.startDrop(); }
+                return;
+            }
+            if(this.phase==='lower'){
+                this.lineY += 2.5;
+                this.hookY = this.lineY;
+                if(this.lineY >= this.targetLineY){ this.phase='waiting'; this.nibbleTimer=80+Math.random()*120; }
+            }
+            if(this.phase==='waiting'){
+                // Gently sway hook
+                this.nibbleTimer--;
+                // Check if fish close to hook
+                const hx = this.rodX, hy = this.hookY;
+                for(let f of fishes){
+                    if(f.caught) continue;
+                    const dx=f.x-hx, dy=f.y-hy;
+                    if(Math.sqrt(dx*dx+dy*dy)<40){
+                        // Fish attracted to bait — drift toward it
+                        f.vx += dx<0?-0.08:0.08;
+                        f.vy += dy<0?-0.05:0.05;
+                    }
+                }
+                if(this.nibbleTimer<=0){
+                    // find nearest fish to hook
+                    let best=null, bestD=999;
+                    for(let f of fishes){
+                        if(f.caught) continue;
+                        const dx=f.x-hx, dy=f.y-hy;
+                        const d=Math.sqrt(dx*dx+dy*dy);
+                        if(d<bestD){bestD=d;best=f;}
+                    }
+                    if(best && bestD < 120){
+                        this.hookFish=best;
+                        this.phase='nibble';
+                        this.nibbleCount=3+Math.floor(Math.random()*3);
+                        this.nibbleTimer=20;
+                    } else {
+                        // no fish nearby — pull up empty
+                        this.phase='pull';
+                        this.caught=false;
+                    }
+                }
+            }
+            if(this.phase==='nibble'){
+                this.nibbleTimer--;
+                // fish swims toward hook
+                if(this.hookFish){
+                    const dx=this.rodX-this.hookFish.x, dy=this.hookY-this.hookFish.y;
+                    const d=Math.sqrt(dx*dx+dy*dy)+0.1;
+                    this.hookFish.vx += (dx/d)*0.4;
+                    this.hookFish.vy += (dy/d)*0.4;
+                }
+                if(this.nibbleTimer<=0){
+                    this.nibbleCount--;
+                    this.nibbleTimer=25;
+                    // Hook bobs
+                    this.hookY += (this.nibbleCount%2===0)?8:-8;
+                    if(this.nibbleCount<=0){
+                        // CATCH or escape
+                        const dx=this.rodX-(this.hookFish?.x||9999), dy=this.hookY-(this.hookFish?.y||9999);
+                        const d=Math.sqrt(dx*dx+dy*dy);
+                        if(d < 55){
+                            // CAUGHT!
+                            this.hookFish.caught=true;
+                            this.caught=true;
+                            this.phase='pull';
+                        } else {
+                            // Fish escaped!
+                            this.caught=false;
+                            this.hookFish=null;
+                            this.phase='pull';
+                        }
+                    }
+                }
+            }
+            if(this.phase==='pull'){
+                this.hookY -= 3.5;
+                if(this.hookFish && this.caught){
+                    this.hookFish.x = this.rodX;
+                    this.hookFish.y = this.hookY;
+                }
+                if(this.hookY <= -40){
+                    // done
+                    this.phase='wait';
+                    this.cooldown=500+Math.random()*500;
+                    this.hookY=0; this.lineY=0;
+                    if(this.hookFish){ this.hookFish.caught=false; this.hookFish.reset(); }
+                    this.hookFish=null; this.caught=false;
+                }
+            }
+        };
+        FishingRod.prototype.startDrop = function(){
+            this.rodX = W*0.25 + Math.random()*W*0.5;
+            this.lineY = 0;
+            this.hookY = 0;
+            this.targetLineY = H*0.3 + Math.random()*H*0.45;
+            this.phase='lower';
+            this.hookFish=null; this.caught=false;
+        };
+        FishingRod.prototype.draw = function(){
+            if(this.phase==='wait') return;
+            const rx = this.rodX;
+            const topY = 0;
+
+            // Rod (just the tip visible at top)
+            ctx.save();
+            ctx.strokeStyle='rgba(180,120,60,0.9)';
+            ctx.lineWidth=3;
+            ctx.beginPath(); ctx.moveTo(rx-8, topY); ctx.lineTo(rx, topY+18);
+            ctx.stroke();
+
+            // Fishing line
+            ctx.strokeStyle='rgba(200,200,200,0.55)';
+            ctx.lineWidth=1;
+            ctx.setLineDash([4,3]);
+            ctx.beginPath(); ctx.moveTo(rx, topY+18); ctx.lineTo(rx, this.hookY);
+            ctx.stroke();
+            ctx.setLineDash([]);
+
+            // Hook
+            ctx.strokeStyle='rgba(220,220,220,0.85)';
+            ctx.lineWidth=2;
+            ctx.beginPath();
+            ctx.arc(rx+6, this.hookY+8, 8, Math.PI*0.8, Math.PI*2.2);
+            ctx.stroke();
+
+            // Bait (worm/wag)
+            const bwag = Math.sin(this.baitWag)*3;
+            ctx.fillStyle='rgba(255,160,80,0.9)';
+            ctx.beginPath(); ctx.ellipse(rx+6+bwag, this.hookY+16, 5, 3, 0.3, 0, Math.PI*2);
+            ctx.fill();
+
+            // Caught fish on hook
+            if(this.hookFish && this.caught){
+                const f=this.hookFish;
+                drawFish(f.x, f.y, -1, -0.5, f.size, f.colors, f.tailPhase+=0.1, 1);
+            }
+            ctx.restore();
+        };
+
+        /* ========== INIT ========== */
+        const FISH_COUNT = 14;
+        const BUBBLE_COUNT = 55;
+        const fishes  = Array.from({length:FISH_COUNT}, (_,i)=>new Fish(i));
+        const bubbles = Array.from({length:BUBBLE_COUNT}, ()=>new Bubble());
+        const crab    = new Crab();
+        const rod     = new FishingRod();
+
+        function animate(){
+            ctx.clearRect(0,0,W,H);
+            bubbles.forEach(b=>{b.update();b.draw();});
+            fishes.forEach(f=>f.update());
+            rod.update(fishes);
+            crab.update(fishes);
+            fishes.forEach(f=>f.draw());
+            rod.draw();
+            crab.draw();
+            requestAnimationFrame(animate);
+        }
+        animate();
+    })();
+    </script>
+
+    <!-- ===== BIRAL (CAT) ANIMATION in What I Do Section ===== -->
+
+    <!-- Walking Cat Strip — Interactive v3 -->
+    <script>
+    (function(){
+        const canvas = document.getElementById('walkingCatStrip');
+        if(!canvas) return;
+        const ctx = canvas.getContext('2d');
+
+        function resize(){
+            canvas.width = window.innerWidth;
+            canvas.style.width = '100vw';
+            canvas.height = 80;
+        }
+        resize();
+        window.addEventListener('resize', resize);
+
+        // ── Mouse tracking (relative to canvas) ──────────────────────────
+        let mouseX = -9999, mouseOnCanvas = false;
+        canvas.addEventListener('mousemove', function(e){
+            const r = canvas.getBoundingClientRect();
+            mouseX = (e.clientX - r.left) * (canvas.width / r.width);
+            mouseOnCanvas = true;
+        });
+        canvas.addEventListener('mouseleave', function(){ mouseOnCanvas = false; mouseX = -9999; });
+
+        // ── State: 'walk' | 'notice' | 'chase' | 'arrived' | 'ballchase' | 'ballrun'
+        let state    = 'walk';
+        let x        = -60;
+        let dir      = 1;
+        let frame    = 0;
+        const WALK_SPEED  = 1.2;
+        const CHASE_SPEED = 3.2;
+        const BALL_RUN_SPEED = 2.8;
+        const CAT_H  = 44;
+        const CY     = canvas.height - 30;
+
+        let noticeTimer  = 0;
+        let arrivedTimer = 0;
+        let bubbleText   = '';
+        let bubbleAlpha  = 0;
+        let bubbleFloatY = 0;
+        // cooldown so notice doesn't re-trigger immediately after arrived
+        let mouseCooldown = 0;
+
+        // ── Ball ─────────────────────────────────────────────────────────
+        let ball = null;
+        let ballTimer = 500;
+
+        function spawnBall(){
+            if(ball) return;
+            const W = canvas.width;
+            ball = {
+                x: 40 + Math.random() * (W - 80),
+                y: -14,
+                vy: 2.5,
+                vx: (Math.random() - 0.5) * 1.4,
+                r: 7,
+                bounce: 0,
+                held: false   // cat is carrying it
+            };
+        }
+
+        function tickBall(){
+            ballTimer--;
+            if(ballTimer <= 0 && !ball && (state === 'walk')){
+                spawnBall();
+                ballTimer = 550 + Math.floor(Math.random() * 400);
+            }
+            if(!ball || ball.held) return;
+
+            ball.vy += 0.22;
+            ball.y  += ball.vy;
+            ball.x  += ball.vx;
+
+            if(ball.y + ball.r >= canvas.height - 4){
+                ball.y  = canvas.height - 4 - ball.r;
+                ball.vy = -ball.vy * 0.55;
+                ball.vx *= 0.85;
+                ball.bounce++;
+                if(Math.abs(ball.vy) < 0.5 && ball.bounce >= 3){ ball = null; }
+            }
+            if(ball && ball.x - ball.r < 0){ ball.x = ball.r; ball.vx *= -1; }
+            if(ball && ball.x + ball.r > canvas.width){ ball.x = canvas.width - ball.r; ball.vx *= -1; }
+        }
+
+        function drawBall(bx, by){
+            if(!ball) return;
+            const dx = bx !== undefined ? bx : ball.x;
+            const dy = by !== undefined ? by : ball.y;
+            ctx.save();
+            ctx.beginPath();
+            ctx.arc(dx, dy, ball.r, 0, Math.PI*2);
+            const g = ctx.createRadialGradient(dx-2, dy-2, 1, dx, dy, ball.r);
+            g.addColorStop(0, '#ff6688');
+            g.addColorStop(1, '#cc0022');
+            ctx.fillStyle = g;
+            ctx.fill();
+            ctx.beginPath();
+            ctx.arc(dx-2, dy-2, ball.r*0.35, 0, Math.PI*2);
+            ctx.fillStyle = 'rgba(255,255,255,0.45)';
+            ctx.fill();
+            ctx.restore();
+        }
+
+        // ── Draw cat ─────────────────────────────────────────────────────
+        function drawWalkingCat(cx, cy, facing, step, catState){
+            ctx.save();
+            ctx.translate(cx, cy);
+            if(facing === -1) ctx.scale(-1, 1);
+
+            const t = step;
+            const isMoving = (catState === 'walk' || catState === 'chase' || catState === 'ballchase' || catState === 'ballrun');
+            const legSwing = isMoving ? Math.sin(t * 0.35) * 7 : 0;
+            const bodyBob  = isMoving ? Math.abs(Math.sin(t * 0.35)) * 2 : 0;
+            const tailWave = Math.sin(t * 0.18) * 12;
+            const tailRaise = (catState === 'arrived' || catState === 'ballrun') ? -10 : 0;
+
+            // Shadow
+            ctx.beginPath();
+            ctx.ellipse(0, CAT_H/2 + 2 - bodyBob, 20, 5, 0, 0, Math.PI*2);
+            ctx.fillStyle = 'rgba(0,0,0,0.18)'; ctx.fill();
+
+            // Tail
+            ctx.save();
+            ctx.translate(-14, CAT_H/2 - 22 - bodyBob);
+            ctx.beginPath();
+            ctx.moveTo(0, 0);
+            ctx.quadraticCurveTo(-18, -10 + tailWave + tailRaise, -10, -28 + tailWave*0.6 + tailRaise);
+            ctx.strokeStyle = '#ff0026'; ctx.lineWidth = 3.5; ctx.lineCap = 'round'; ctx.stroke();
+            ctx.restore();
+
+            // Back legs
+            ctx.save();
+            ctx.translate(-8, CAT_H/2 - 4 - bodyBob);
+            ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(-legSwing*0.7, 16);
+            ctx.strokeStyle = '#c0c0c0'; ctx.lineWidth = 3; ctx.lineCap = 'round'; ctx.stroke();
+            ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(legSwing*0.7, 16); ctx.stroke();
+            ctx.restore();
+
+            // Body
+            ctx.beginPath();
+            ctx.ellipse(0, CAT_H/2 - 14 - bodyBob, 16, 11, -0.1, 0, Math.PI*2);
+            ctx.fillStyle = '#d0d0d0'; ctx.fill();
+            ctx.strokeStyle = 'rgba(255,0,38,0.3)'; ctx.lineWidth = 1; ctx.stroke();
+
+            // Belly
+            ctx.beginPath();
+            ctx.ellipse(2, CAT_H/2 - 13 - bodyBob, 8, 6, 0, 0, Math.PI*2);
+            ctx.fillStyle = '#f0f0f0'; ctx.fill();
+
+            // Front legs
+            ctx.save();
+            ctx.translate(8, CAT_H/2 - 6 - bodyBob);
+            ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(legSwing, 14);
+            ctx.strokeStyle = '#c0c0c0'; ctx.lineWidth = 3; ctx.lineCap = 'round'; ctx.stroke();
+            ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(-legSwing, 14); ctx.stroke();
+            ctx.restore();
+
+            // Neck
+            ctx.beginPath();
+            ctx.moveTo(10, CAT_H/2 - 22 - bodyBob);
+            ctx.lineTo(12, CAT_H/2 - 14 - bodyBob);
+            ctx.strokeStyle = '#d0d0d0'; ctx.lineWidth = 9; ctx.lineCap = 'round'; ctx.stroke();
+
+            // Head — tilt when noticing mouse
+            const headTilt = (catState === 'notice') ? 0.28 : 0;
+            ctx.save();
+            ctx.translate(12, CAT_H/2 - 28 - bodyBob);
+            ctx.rotate(headTilt);
+            ctx.beginPath();
+            ctx.ellipse(0, 0, 12, 10, 0.15, 0, Math.PI*2);
+            ctx.fillStyle = '#d0d0d0'; ctx.fill();
+            ctx.strokeStyle = 'rgba(255,0,38,0.2)'; ctx.lineWidth = 1; ctx.stroke();
+
+            // Ears
+            ctx.fillStyle = '#c0c0c0';
+            ctx.beginPath(); ctx.moveTo(-8,-7); ctx.lineTo(-11,-16); ctx.lineTo(-2,-9); ctx.closePath(); ctx.fill();
+            ctx.beginPath(); ctx.moveTo(4,-8); ctx.lineTo(10,-16); ctx.lineTo(10,-8); ctx.closePath(); ctx.fill();
+            ctx.fillStyle = 'rgba(255,0,38,0.35)';
+            ctx.beginPath(); ctx.moveTo(-6,-8); ctx.lineTo(-8,-13); ctx.lineTo(-2,-9.5); ctx.closePath(); ctx.fill();
+            ctx.beginPath(); ctx.moveTo(5,-9); ctx.lineTo(9,-15); ctx.lineTo(9.5,-9.5); ctx.closePath(); ctx.fill();
+
+            // Eyes
+            const blink   = (Math.floor(frame/90) % 7 === 0);
+            const excited = (catState === 'notice' || catState === 'arrived' || catState === 'ballchase' || catState === 'ballrun');
+            ctx.fillStyle = '#ff0026';
+            if(blink){
+                ctx.fillRect(-5,-2,5,1.5);
+                ctx.fillRect(6,-2,5,1.5);
+            } else {
+                const eyeR = excited ? 3 : 2.2;
+                ctx.beginPath(); ctx.arc(-3,-2,eyeR,0,Math.PI*2); ctx.fill();
+                ctx.beginPath(); ctx.arc(6,-2,eyeR,0,Math.PI*2); ctx.fill();
+                ctx.fillStyle = '#1a0008';
+                ctx.beginPath(); ctx.arc(-2.5,-2, excited?1.5:1,0,Math.PI*2); ctx.fill();
+                ctx.beginPath(); ctx.arc(6.5,-2,  excited?1.5:1,0,Math.PI*2); ctx.fill();
+            }
+
+            // Nose
+            ctx.fillStyle = '#ff6680';
+            ctx.beginPath(); ctx.arc(1,2,2,0,Math.PI*2); ctx.fill();
+
+            // Whiskers
+            ctx.strokeStyle = 'rgba(255,255,255,0.5)';
+            ctx.lineWidth = 0.8; ctx.lineCap = 'round';
+            [[-1,0],[-1,2],[1,-1]].forEach(([dy,angle])=>{
+                ctx.save(); ctx.translate(1,2); ctx.rotate(angle*0.3);
+                ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(-16,dy*2); ctx.stroke();
+                ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(16,dy*2); ctx.stroke();
+                ctx.restore();
+            });
+
+            ctx.restore(); // head
+            ctx.restore(); // cat
+        }
+
+        // ── Speech bubble ─────────────────────────────────────────────────
+        function drawBubble(cx, cy){
+            if(bubbleAlpha <= 0) return;
+            ctx.save();
+            ctx.globalAlpha = bubbleAlpha;
+            const bx = cx, by = cy - 18 - bubbleFloatY;
+            const pad = 6, tw = ctx.measureText(bubbleText).width;
+            const bw = tw + pad*2, bh = 18;
+            // box
+            ctx.fillStyle = 'rgba(20,20,20,0.82)';
+            ctx.strokeStyle = '#ff0026';
+            ctx.lineWidth = 1.2;
+            ctx.beginPath();
+            ctx.roundRect(bx - bw/2, by - bh, bw, bh, 5);
+            ctx.fill(); ctx.stroke();
+            // tail
+            ctx.beginPath();
+            ctx.moveTo(bx - 5, by); ctx.lineTo(bx, by + 6); ctx.lineTo(bx + 5, by);
+            ctx.fillStyle = 'rgba(20,20,20,0.82)'; ctx.fill();
+            ctx.strokeStyle = '#ff0026'; ctx.stroke();
+            // text
+            ctx.font = 'bold 10px Rubik, sans-serif';
+            ctx.fillStyle = '#ff6680';
+            ctx.textAlign = 'center';
+            ctx.fillText(bubbleText, bx, by - 5);
+            ctx.restore();
+        }
+
+        // ── Main loop ─────────────────────────────────────────────────────
+        function loop(){
+            frame++;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            const W  = canvas.width;
+            const mx = mouseX;
+
+            if(mouseCooldown > 0) mouseCooldown--;
+
+            tickBall();
+
+            // ── State logic ────────────────────────────────────────────
+            if(state === 'walk'){
+                // Ball spawned → chase it
+                if(ball && !ball.held && ball.y > -5){
+                    state = 'ballchase';
+                }
+                // Mouse nearby → notice (with cooldown guard)
+                else if(mouseOnCanvas && mouseCooldown === 0 && Math.abs(mx - x) > 25 && Math.abs(mx - x) < 200){
+                    state = 'notice';
+                    noticeTimer = 45;
+                    dir = mx > x ? 1 : -1;
+                    bubbleText = 'Miaw! I am katch far';
+                    bubbleAlpha = 1;
+                    bubbleFloatY = 0;
+                }
+                else {
+                    x += WALK_SPEED * dir;
+                    if(dir===1 && x > W+60){ x=W+60; dir=-1; }
+                    else if(dir===-1 && x < -60){ x=-60; dir=1; }
+                }
+            }
+
+            else if(state === 'notice'){
+                // Stopped — show bubble, head tilt
+                bubbleFloatY += 0.3;
+                bubbleAlpha  -= 0.012;
+                if(bubbleAlpha < 0) bubbleAlpha = 0;
+                noticeTimer--;
+                dir = (mouseOnCanvas && mx > x) ? 1 : dir;
+                dir = (mouseOnCanvas && mx < x) ? -1 : dir;
+                if(!mouseOnCanvas){ state='walk'; mouseCooldown=60; }
+                else if(noticeTimer <= 0){
+                    state = 'chase';
+                }
+            }
+
+            else if(state === 'chase'){
+                if(!mouseOnCanvas){ state='walk'; mouseCooldown=80; }
+                else {
+                    dir = mx > x ? 1 : -1;
+                    x += CHASE_SPEED * dir;
+                    if(Math.abs(mx - x) < 22){
+                        state = 'arrived';
+                        arrivedTimer = 100;
+                        mouseCooldown = 180;
+                    }
+                }
+            }
+
+            else if(state === 'arrived'){
+                arrivedTimer--;
+                if(!mouseOnCanvas || arrivedTimer <= 0){
+                    state = 'walk';
+                }
+            }
+
+            else if(state === 'ballchase'){
+                if(!ball){ state='walk'; }
+                else {
+                    dir = ball.x > x ? 1 : -1;
+                    x += CHASE_SPEED * dir;
+                    // Picked up ball
+                    if(Math.abs(ball.x - x) < 20 && ball.y > CY - 30){
+                        ball.held = true;
+                        state = 'ballrun';
+                        // run to the opposite edge
+                        dir = x < W/2 ? 1 : -1;
+                    }
+                }
+            }
+
+            else if(state === 'ballrun'){
+                // Run with ball to screen edge then drop and return to walk
+                x += BALL_RUN_SPEED * dir;
+                if(ball){ ball.x = x + dir*14; ball.y = CY - 12; }
+                if(x > W + 60 || x < -60){
+                    ball = null;
+                    state = 'walk';
+                    // reappear from opposite side
+                    if(x > W + 60){ x = W+60; dir=-1; }
+                    else { x=-60; dir=1; }
+                }
+            }
+
+            x = Math.max(-80, Math.min(W+80, x));
+
+            // ── Draw ──────────────────────────────────────────────────
+            // Ball (free flying) drawn before cat
+            if(ball && !ball.held) drawBall();
+            // Cat
+            drawWalkingCat(x, CY, dir, frame, state);
+            // Ball held — in front of cat's face
+            if(ball && ball.held) drawBall(ball.x, ball.y);
+            // Bubble
+            drawBubble(x, CY);
+
+            requestAnimationFrame(loop);
+        }
+
+        setTimeout(() => { x = -60; loop(); }, 500);
+    })();
+    </script>
+
+    <!-- Case Studies: Infinite Loop Scroll + Drag + Buttons -->
+    <script>
+    (function() {
+        var track = document.getElementById('caseScrollTrack');
+        if (!track) return;
+
+        // Clone all cards for infinite loop
+        var origCards = Array.from(track.children);
+        origCards.forEach(function(card) {
+            track.appendChild(card.cloneNode(true));
+        });
+
+        // Start at middle point
+        var half = track.scrollWidth / 2;
+        track.scrollLeft = half;
+
+        var paused = false;
+        var speed = 1;
+
+        // Auto scroll: right to left
+        function autoLoop() {
+            if (!paused) {
+                track.scrollLeft -= speed;
+                var half = track.scrollWidth / 2;
+                if (track.scrollLeft <= 0) {
+                    track.scrollLeft = half;
+                }
+            }
+            requestAnimationFrame(autoLoop);
+        }
+        autoLoop();
+
+        // Hover: pause on enter, resume on leave
+        track.addEventListener('mouseenter', function() { paused = true; });
+        track.addEventListener('mouseleave', function() {
+            if (!isDown) paused = false;
+        });
+
+        // Mouse drag
+        var isDown = false, startX, startScrollLeft;
+        track.style.cursor = 'grab';
+
+        track.addEventListener('mousedown', function(e) {
+            isDown = true;
+            paused = true;
+            track.style.cursor = 'grabbing';
+            startX = e.pageX;
+            startScrollLeft = track.scrollLeft;
+            e.preventDefault();
+        });
+        document.addEventListener('mouseup', function() {
+            if (!isDown) return;
+            isDown = false;
+            track.style.cursor = 'grab';
+            paused = false;
+        });
+        document.addEventListener('mousemove', function(e) {
+            if (!isDown) return;
+            var dx = e.pageX - startX;
+            var newScroll = startScrollLeft - dx;
+            var half = track.scrollWidth / 2;
+            if (newScroll <= 0) newScroll = half;
+            if (newScroll >= track.scrollWidth - track.clientWidth) newScroll = half;
+            track.scrollLeft = newScroll;
+        });
+
+        // Arrow buttons
+        var btnLeft = document.getElementById('btnCaseLeft');
+        var btnRight = document.getElementById('btnCaseRight');
+
+        if (btnLeft) {
+            btnLeft.addEventListener('click', function() {
+                paused = true;
+                var half = track.scrollWidth / 2;
+                track.scrollLeft += 420;
+                if (track.scrollLeft >= track.scrollWidth - track.clientWidth) track.scrollLeft = half;
+                setTimeout(function() { paused = false; }, 800);
+            });
+        }
+        if (btnRight) {
+            btnRight.addEventListener('click', function() {
+                paused = true;
+                var half = track.scrollWidth / 2;
+                track.scrollLeft -= 420;
+                if (track.scrollLeft <= 0) track.scrollLeft = half;
+                setTimeout(function() { paused = false; }, 800);
+            });
+        }
+    })();
+    </script>
+
+    <!-- Particle Text Effect -->
+    <script>
+    (function(){
+        const canvas = document.getElementById('particleText');
+        if(!canvas) return;
+        const ctx = canvas.getContext('2d');
+
+        function setSize(){
+            canvas.width = canvas.parentElement.offsetWidth;
+            canvas.height = 90;
+        }
+        setSize();
+        window.addEventListener('resize', ()=>{ setSize(); buildParticles(); });
+
+        const mouse = {x:-9999, y:-9999, radius:100, active:false};
+
+        // Track mouse on entire hero section
+        const hero = document.getElementById('hero');
+        hero.addEventListener('mousemove', function(e){
+            const rect = canvas.getBoundingClientRect();
+            mouse.x = e.clientX - rect.left;
+            mouse.y = e.clientY - rect.top;
+            mouse.active = true;
+        });
+        hero.addEventListener('mouseleave', function(){
+            mouse.x = -9999; mouse.y = -9999;
+            mouse.active = false;
+        });
+
+        let particles = [];
+
+        function buildParticles(){
+            particles = [];
+            const off = document.createElement('canvas');
+            off.width = canvas.width;
+            off.height = canvas.height;
+            const octx = off.getContext('2d');
+
+            const fs = Math.min(Math.floor(canvas.width / 5.5), 72);
+            octx.fillStyle = '#ff0026';
+            octx.font = `700 ${fs}px Rubik, sans-serif`;
+            octx.textBaseline = 'middle';
+            octx.textAlign = 'left';
+            octx.fillText('Mahfuz BD Asia', 4, canvas.height/2);
+
+            const data = octx.getImageData(0, 0, off.width, off.height).data;
+            // gap=3 → tightly packed, looks like solid text
+            const gap = 3;
+            for(let y=0; y<off.height; y+=gap){
+                for(let x=0; x<off.width; x+=gap){
+                    const idx = (y * off.width + x) * 4;
+                    if(data[idx+3] > 128){
+                        particles.push(new Particle(x, y));
+                    }
+                }
+            }
+        }
+
+        function Particle(ox, oy){
+            this.ox = ox;
+            this.oy = oy;
+            this.x = ox;
+            this.y = oy;
+            this.vx = 0;
+            this.vy = 0;
+            // Very tight size → solid text look
+            this.size = 1.5;
+            this.ease = Math.random()*0.05 + 0.06;
+        }
+
+        Particle.prototype.update = function(){
+            if(mouse.active){
+                const dx = mouse.x - this.x;
+                const dy = mouse.y - this.y;
+                const dist = Math.sqrt(dx*dx + dy*dy);
+                if(dist < mouse.radius){
+                    const force = (mouse.radius - dist) / mouse.radius;
+                    const angle = Math.atan2(dy, dx);
+                    const push = force * 8;
+                    this.vx -= Math.cos(angle) * push;
+                    this.vy -= Math.sin(angle) * push;
+                }
+            }
+            // Spring back to origin
+            this.vx += (this.ox - this.x) * this.ease;
+            this.vy += (this.oy - this.y) * this.ease;
+            this.vx *= 0.80;
+            this.vy *= 0.80;
+            this.x += this.vx;
+            this.y += this.vy;
+        };
+
+        Particle.prototype.draw = function(){
+            // Distance from origin — farther = more transparent
+            const dx = this.x - this.ox;
+            const dy = this.y - this.oy;
+            const dist = Math.sqrt(dx*dx+dy*dy);
+            const alpha = Math.max(0.15, 1 - dist/120);
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI*2);
+            ctx.fillStyle = 'rgba(255,0,38,' + alpha + ')';
+            ctx.fill();
+        };
+
+        buildParticles();
+
+        function animate(){
+            ctx.clearRect(0,0,canvas.width,canvas.height);
+            particles.forEach(p=>{ p.update(); p.draw(); });
+            requestAnimationFrame(animate);
+        }
+        animate();
+    })();
+    </script>
+</body>
+</html>

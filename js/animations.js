@@ -3,6 +3,8 @@
     if(!canvas) return;
     const ctx = canvas.getContext('2d');
     let W, H, mouse = {x:-999, y:-999};
+    let lastMouseMoveTime = 0;
+    const MOUSE_THROTTLE = 16; // ~60fps
 
     function resize(){
         const rect = canvas.parentElement.getBoundingClientRect();
@@ -14,6 +16,10 @@
 
     const heroSection = document.getElementById('hero');
     heroSection.addEventListener('mousemove', function(e){
+        const now = Date.now();
+        if(now - lastMouseMoveTime < MOUSE_THROTTLE) return;
+        lastMouseMoveTime = now;
+        
         const rect = heroSection.getBoundingClientRect();
         mouse.x = e.clientX - rect.left;
         mouse.y = e.clientY - rect.top;
@@ -445,8 +451,8 @@
         ctx.restore();
     };
 
-    const FISH_COUNT = 14;
-    const BUBBLE_COUNT = 55;
+    const FISH_COUNT = 8;
+    const BUBBLE_COUNT = 35;
     const fishes  = Array.from({length:FISH_COUNT}, (_,i)=>new Fish(i));
     const bubbles = Array.from({length:BUBBLE_COUNT}, ()=>new Bubble());
     const crab    = new Crab();

@@ -1644,6 +1644,103 @@
                 </div>
             </div>
 
+            <!-- Contact Form Handler Script -->
+            <script>
+            (function(){
+                const form = document.getElementById('agencyContactForm');
+                if (!form) return;
+
+                form.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+
+                    // Get form values
+                    const name = form.querySelector('input[placeholder="Enter Name"]')?.value.trim();
+                    const email = form.querySelector('input[placeholder="Enter Email"]')?.value.trim();
+                    const whatsapp = form.querySelector('input[placeholder="Enter WhatsApp Number"]')?.value.trim();
+                    const message = form.querySelector('textarea[placeholder="Write your message ..."]')?.value.trim();
+                    
+                    // Get selected plan
+                    const planRadios = form.querySelectorAll('.plan-radio');
+                    let plan = '';
+                    for (let radio of planRadios) {
+                        if (radio.checked) {
+                            plan = radio.value;
+                            break;
+                        }
+                    }
+
+                    // Get selected services
+                    const serviceCheckboxes = form.querySelectorAll('.service-checkbox');
+                    const services = Array.from(serviceCheckboxes)
+                        .filter(c => c.checked)
+                        .map(c => c.value);
+
+                    // Validate required fields
+                    if (!name) {
+                        alert('Please enter your name');
+                        return;
+                    }
+                    if (!email) {
+                        alert('Please enter your email');
+                        return;
+                    }
+                    if (!whatsapp) {
+                        alert('Please enter your WhatsApp number');
+                        return;
+                    }
+
+                    // Show loading state
+                    const submitBtn = form.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.textContent;
+                    submitBtn.textContent = 'Sending...';
+                    submitBtn.disabled = true;
+
+                    try {
+                        // Send form data to backend
+                        const response = await fetch('/send-email', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({
+                                name,
+                                email,
+                                whatsapp,
+                                plan,
+                                services,
+                                message
+                            })
+                        });
+
+                        const data = await response.json();
+
+                        if (response.ok && data.success) {
+                            alert('Thank you! Your message has been sent successfully. We will contact you soon.');
+                            form.reset();
+                            
+                            // Reset dropdown displays
+                            document.getElementById('planSelectedText').textContent = 'Select a Plan';
+                            document.getElementById('planSelectedText').style.color = 'var(--color-text-muted)';
+                            
+                            const servicesText = document.getElementById('servicesSelectedText');
+                            if (servicesText) {
+                                servicesText.textContent = 'Select Services ( Optional )';
+                                servicesText.style.color = 'var(--color-text-muted)';
+                            }
+                        } else {
+                            alert('Error sending message: ' + (data.error || 'Unknown error'));
+                        }
+                    } catch (error) {
+                        console.error('Form submission error:', error);
+                        alert('Error sending message. Please try again later.');
+                    } finally {
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                    }
+                });
+            })();
+            </script>
+
             <!-- Mascot Animation: pencil writing + speech bubble -->
             <script>
             (function(){
